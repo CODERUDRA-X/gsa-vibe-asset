@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nitya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .floater {
+            position: absolute;
+            bottom: -10vh;
+            animation: floatUp linear infinite;
+            opacity: 0.5;
+            filter: blur(1px);
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+
+        .f1 { left: 5%; font-size: 25px; animation-duration: 14s; animation-delay: 0s; }
+        .f2 { left: 12%; font-size: 15px; animation-duration: 10s; animation-delay: 2s; }
+        .f3 { left: 18%; font-size: 30px; animation-duration: 18s; animation-delay: 5s; filter: blur(2px); opacity: 0.3; }
+        .f4 { left: 25%; font-size: 20px; animation-duration: 12s; animation-delay: 1s; }
+        .f5 { left: 30%; font-size: 18px; animation-duration: 16s; animation-delay: 7s; }
+        .f6 { left: 40%; font-size: 28px; animation-duration: 20s; animation-delay: 3s; filter: blur(1px); }
+        .f7 { left: 48%; font-size: 16px; animation-duration: 11s; animation-delay: 0s; }
+        .f8 { left: 55%; font-size: 35px; animation-duration: 22s; animation-delay: 6s; opacity: 0.2; }
+        .f9 { left: 62%; font-size: 22px; animation-duration: 13s; animation-delay: 2s; }
+        .f10 { left: 70%; font-size: 19px; animation-duration: 17s; animation-delay: 8s; }
+        .f11 { left: 78%; font-size: 26px; animation-duration: 15s; animation-delay: 1s; }
+        .f12 { left: 85%; font-size: 20px; animation-duration: 12s; animation-delay: 4s; }
+        .f13 { left: 90%; font-size: 32px; animation-duration: 19s; animation-delay: 0s; filter: blur(2px); }
+        .f14 { left: 95%; font-size: 18px; animation-duration: 14s; animation-delay: 5s; }
+        .f15 { left: 35%; font-size: 24px; animation-duration: 15s; animation-delay: 9s; }
+
+        .envelope-wrapper {
+            position: relative;
+            cursor: pointer;
+            z-index: 5;
+            transition: transform 0.3s;
+        }
+        .envelope-wrapper:hover { transform: scale(1.02); }
+
+        .envelope {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            background-color: #ff686b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 6px;
+        }
+
+        .seal {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px; height: 50px;
+            background: #e6c87e;
+            border: 4px solid #d4af37;
+            border-radius: 50%;
+            z-index: 10;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px; color: #8a6d3b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .flap {
+            position: absolute;
+            width: 0; height: 0;
+            z-index: 5;
+        }
+        .flap.bottom { bottom: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 110px solid #ff5e61; border-radius: 0 0 6px 6px; }
+        .flap.left { top: 0; border-top: 110px solid transparent; border-bottom: 110px solid transparent; border-left: 160px solid #ff7b7e; border-radius: 6px 0 0 6px; }
+        .flap.right { top: 0; right: 0; border-top: 110px solid transparent; border-bottom: 110px solid transparent; border-right: 160px solid #ff7b7e; border-radius: 0 6px 6px 0; }
+        .flap.top { top: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-top: 120px solid #ff8e91; transform-origin: top; transition: transform 0.6s ease-in-out; z-index: 6; }
+
+        .card {
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 280px; height: 180px;
+            background: white;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.8s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+            border-radius: 8px;
+            display: flex; flex-direction: column; align-items: center;
+            opacity: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff686b;
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
+        .card p { font-size: 13px; color: #555; line-height: 1.6; }
+        
+        .gift-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+            display: none;
+            animation: pulseBtn 2s infinite;
+        }
+
+        @keyframes pulseBtn {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(162, 155, 254, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(162, 155, 254, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(162, 155, 254, 0); }
+        }
+
+        .open .flap.top { transform: rotateX(180deg); z-index: 0; }
+        .open .seal { opacity: 0; transform: translate(-50%, -50%) scale(0); transition: 0.4s; }
+        .open .card {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-230px);
+            height: auto; min-height: 380px;
+            z-index: 10;
+        }
+
+        .instruction {
+            position: absolute; bottom: -60px; width: 100%;
+            text-align: center; color: rgba(0,0,0,0.4); font-size: 14px;
+            animation: fadeIn 2s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-container">
+        <div class="floater f1">🌸</div><div class="floater f2">✨</div><div class="floater f3">🥳</div>
+        <div class="floater f4">🌸</div><div class="floater f5">🎂</div><div class="floater f6">💙</div>
+        <div class="floater f7">🥳</div><div class="floater f8">🌸</div><div class="floater f9">🥳</div>
+        <div class="floater f10">✨</div><div class="floater f11">🥳</div><div class="floater f12">🌸</div>
+        <div class="floater f13">💙</div><div class="floater f14">✨</div><div class="floater f15">🥳</div>
+    </div>
+
+    <div class="envelope-wrapper" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="flap top"></div>
+            <div class="flap left"></div>
+            <div class="flap right"></div>
+            <div class="flap bottom"></div>
+            <div class="seal">N</div>
+            
+            <div class="card">
+                <h2>🌸 Happy Birthday, Nitya! 🌸</h2>
+                <p>
+                    Wishing you a year where you move forward at your own pace, with clarity and confidence.<br><br>
+                    May you keep growing, learning, and becoming the best version of yourself.<br><br>
+                    Stay true to your vibe. You're doing better than you think.
+                </p>
+                <div style="margin-top:10px; font-weight:bold; color:#333;">- Your brother, Shreyansh 💙</div>
+
+                <a href="https://youtu.be/J0V2nSVUxbU?si=zreEuMEE1-mTj4R4" target="_blank" class="gift-btn" id="surpriseBtn">
+                    🎁 Tap for Surprise
+                </a>
+            </div>
+        </div>
+        <div class="instruction">Tap seal to open</div>
+    </div>
+
+    <script>
+        let isOpened = false;
+        // Magic Sound Effect (Online Link - No Download Needed)
+        const audio = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
+
+        function openEnvelope() {
+            if (!isOpened) {
+                const wrapper = document.querySelector('.envelope-wrapper');
+                const btn = document.getElementById('surpriseBtn');
+                
+                // Play Sound Effect immediately on click
+                audio.play();
+                
+                wrapper.classList.add('open');
+                isOpened = true;
+
+                // Confetti Animation
+                setTimeout(() => {
+                    confetti({
+                        particleCount: 150,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#ff9a9e', '#fad0c4', '#a18cd1']
+                    });
+                }, 400);
+
+                // Show Button after 2.5 seconds
+                setTimeout(() => {
+                    btn.style.display = "inline-block";
+                }, 2500);
+            }
+        }
+    </script>
+</body>
+</html>
