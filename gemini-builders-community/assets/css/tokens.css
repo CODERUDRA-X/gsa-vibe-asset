@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Palette */
+  --cream:   #F5F0E8;
+  --ink:     #1A1A1A;
+  --blue:    #4285F4;
+  --yellow:  #FFE566;
+  --red:     #D63B2F;
+  --green:   #34A853;
+  --paper:   #EDE8DC;
+  --faint:   #D9D4C7;
+
+  /* Typography */
+  --font-marker:  'Permanent Marker', cursive;
+  --font-elite:   'Special Elite', 'Courier New', monospace;
+  --font-mono:    'Space Mono', monospace;
+
+  /* Spacing scale */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  24px;
+  --sp-lg:  40px;
+  --sp-xl:  60px;
+  --sp-2xl: 100px;
+
+  /* Shadows (brutalist offset) */
+  --shadow-ink:    5px 5px 0 var(--ink);
+  --shadow-blue:   5px 5px 0 var(--blue);
+  --shadow-yellow: 5px 5px 0 var(--yellow);
+  --shadow-red:    5px 5px 0 var(--red);
+  --shadow-green:  5px 5px 0 var(--green);
+
+  /* Border */
+  --border-ink:  3px solid var(--ink);
+  --border-blue: 3px solid var(--blue);
+  --border-red:  3px solid var(--red);
+
+  /* Transitions */
+  --t-fast: 0.12s ease;
+  --t-mid:  0.22s ease;
+}

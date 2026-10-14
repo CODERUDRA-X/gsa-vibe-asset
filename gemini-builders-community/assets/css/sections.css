@@ -1,0 +1,343 @@
+/* ═══════════════════════════════════════════
+   SECTIONS CSS — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+/* ── HERO ───────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  background-color: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 31px,
+    var(--faint) 31px, var(--faint) 32px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  left: 88px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(214, 59, 47, 0.35);
+  z-index: 1;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+  padding: 100px 60px 80px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '//';
+  color: var(--red);
+}
+.hero-h1 {
+  font-family: var(--font-marker);
+  font-size: clamp(52px, 7vw, 84px);
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.hero-h1 .underlined {
+  position: relative;
+  display: inline-block;
+}
+.hero-h1 .underlined::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  height: 12px;
+  background: var(--yellow);
+  z-index: -1;
+  transform: rotate(-1deg) skewX(-3deg);
+}
+.hero-sub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #3a3530;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Hero right — stat card */
+.hero-right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 60px 60px 40px;
+}
+.hero-doodle-card {
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  border: 4px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  padding: 36px;
+  transform: rotate(1.5deg);
+  position: relative;
+}
+.hero-doodle-card::before {
+  content: '★ PINNED';
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  background: var(--red);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+}
+.doodle-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.doodle-stat {
+  border: 3px solid var(--ink);
+  padding: 16px 12px;
+  text-align: center;
+  background: var(--cream);
+}
+.doodle-stat.blue   { background: #EBF1FD; border-color: var(--blue);  box-shadow: 3px 3px 0 var(--blue); }
+.doodle-stat.yellow { background: #FFFBE0; border-color: var(--ink);   box-shadow: 3px 3px 0 var(--yellow); }
+.doodle-stat.red    { background: #FDECEA; border-color: var(--red);   box-shadow: 3px 3px 0 var(--red); }
+.doodle-stat.green  { background: #E6F4EA; border-color: var(--green); box-shadow: 3px 3px 0 var(--green); }
+.doodle-stat-num {
+  font-family: var(--font-marker);
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.doodle-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #555;
+}
+.doodle-tagline {
+  font-family: var(--font-marker);
+  font-size: 18px;
+  text-align: center;
+  padding: 14px;
+  background: var(--yellow);
+  border: 3px solid var(--ink);
+  transform: rotate(-0.5deg);
+}
+
+/* ── ABOUT ──────────────────────────────── */
+#about {
+  background: var(--ink);
+  padding: var(--sp-2xl) var(--sp-xl);
+}
+#about .section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+#about .section-label { color: var(--yellow); }
+#about .section-label::after { background: var(--yellow); }
+#about .section-title { color: var(--cream); }
+#about p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #B0A898;
+  margin-bottom: 20px;
+}
+#about p strong { color: var(--yellow); }
+
+.manifesto-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.manifesto-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  transition: background var(--t-mid), border-color var(--t-mid);
+  cursor: default;
+}
+.manifesto-line:hover {
+  background: rgba(255,229,102,0.07);
+  border-color: var(--yellow);
+}
+.manifesto-num {
+  font-family: var(--font-marker);
+  font-size: 28px;
+  color: var(--yellow);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.manifesto-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── EVENTS ─────────────────────────────── */
+#events {
+  background: var(--cream);
+  padding: var(--sp-2xl) var(--sp-xl);
+}
+#events .section-inner { max-width: 1200px; margin: 0 auto; }
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── BUILDS ─────────────────────────────── */
+#builds {
+  background: var(--paper);
+  padding: var(--sp-2xl) var(--sp-xl);
+  position: relative;
+}
+#builds::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 31px,
+    rgba(0,0,0,0.055) 31px, rgba(0,0,0,0.055) 32px
+  );
+  pointer-events: none;
+}
+#builds .section-inner { position: relative; }
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── ROADMAP ────────────────────────────── */
+#roadmap {
+  background: var(--cream);
+  padding: var(--sp-2xl) var(--sp-xl);
+}
+#roadmap .section-header { text-align: center; }
+#roadmap .section-label  { justify-content: center; }
+
+.roadmap-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 20px;
+}
+.roadmap-track::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0px, var(--ink) 8px,
+    transparent 8px, transparent 16px
+  );
+  z-index: 0;
+}
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  z-index: 1;
+}
+.roadmap-circle {
+  width: 80px;
+  height: 80px;
+  border: 4px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: var(--cream);
+  margin-bottom: 20px;
+}
+.roadmap-step:nth-child(1) .roadmap-circle { background: #EBF1FD; box-shadow: 4px 4px 0 var(--blue); }
+.roadmap-step:nth-child(2) .roadmap-circle { background: #FDECEA; box-shadow: 4px 4px 0 var(--red); }
+.roadmap-step:nth-child(3) .roadmap-circle { background: #FFFBE0; box-shadow: 4px 4px 0 var(--yellow); }
+.roadmap-step:nth-child(4) .roadmap-circle { background: #E6F4EA; box-shadow: 4px 4px 0 var(--green); }
+.roadmap-step:nth-child(5) .roadmap-circle { background: var(--ink); box-shadow: 4px 4px 0 var(--blue); color: var(--yellow); }
+.roadmap-step-title {
+  font-family: var(--font-marker);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.roadmap-step-desc {
+  font-size: 12px;
+  color: #6a6258;
+  line-height: 1.6;
+}
+
+/* ── JOIN ───────────────────────────────── */
+#join {
+  background: var(--yellow);
+  padding: var(--sp-2xl) var(--sp-xl);
+  border-top: 5px solid var(--ink);
+  border-bottom: 5px solid var(--ink);
+}
+#join .section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+#join .section-label { color: var(--red); }
+#join .section-label::after { background: var(--red); }
+#join .section-title { color: var(--ink); }
+#join p { font-size: 16px; line-height: 1.8; color: #3a3530; }
+

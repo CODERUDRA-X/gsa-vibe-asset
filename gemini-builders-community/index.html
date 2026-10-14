@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gemini Builders Community</title>
+    <meta name="description" content="Not a club. A movement at UGI. We build with Gemini, experiment with AI, and ship real products. Builders over consumers.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gemini Builders Community">
+    <meta property="og:description" content="We are tired of just consuming AI. So we built a space to learn, build, collaborate, and ship real AI projects together. ⚡">
+    <meta property="og:url" content="https://gcb-hub.netlify.app/">
+    <meta property="og:image" content="https://gcb-hub.netlify.app/og-image.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Gemini Builders Community">
+
+<meta property="og:image:secure_url"
+      content="https://gcb-hub.netlify.app/og-image.png">
+
+<meta property="og:image:type" content="image/png">
+
+<meta property="og:image:width" content="1200">
+
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"
+content="Gemini Builders Community banner">
+
+<meta name="twitter:image:alt"
+content="Gemini Builders Community banner">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gemini Builders Community">
+    <meta name="twitter:description" content="We are tired of just consuming AI. So we built a space to learn, build, collaborate, and ship real AI projects together. ⚡">
+    <meta name="twitter:image" content="https://gcb-hub.netlify.app/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Special+Elite&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Palette */
+  --cream:   #F5F0E8;
+  --ink:     #1A1A1A;
+  --blue:    #4285F4;
+  --yellow:  #FFE566;
+  --red:     #D63B2F;
+  --green:   #34A853;
+  --paper:   #EDE8DC;
+  --faint:   #D9D4C7;
+
+  /* Typography */
+  --font-marker:  'Permanent Marker', cursive;
+  --font-elite:   'Special Elite', 'Courier New', monospace;
+  --font-mono:    'Space Mono', monospace;
+
+  /* Spacing scale */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  24px;
+  --sp-lg:  40px;
+  --sp-xl:  60px;
+  --sp-2xl: 100px;
+
+  /* Shadows (brutalist offset) */
+  --shadow-ink:    5px 5px 0 var(--ink);
+  --shadow-blue:   5px 5px 0 var(--blue);
+  --shadow-yellow: 5px 5px 0 var(--yellow);
+  --shadow-red:    5px 5px 0 var(--red);
+  --shadow-green:  5px 5px 0 var(--green);
+
+  /* Border */
+  --border-ink:  3px solid var(--ink);
+  --border-blue: 3px solid var(--blue);
+  --border-red:  3px solid var(--red);
+
+  /* Transitions */
+  --t-fast: 0.12s ease;
+  --t-mid:  0.22s ease;
+}
+/* ═══════════════════════════════════════════
+   BASE & RESET — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-elite);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* ── Utility classes ── */
+.mono    { font-family: var(--font-mono); }
+.marker  { font-family: var(--font-marker); }
+
+.sketch-box {
+  border: var(--border-ink);
+  box-shadow: var(--shadow-ink);
+  border-radius: 2px;
+}
+.sketch-box-blue {
+  border: var(--border-blue);
+  box-shadow: var(--shadow-blue);
+  border-radius: 2px;
+}
+.sketch-box-yellow {
+  border: var(--border-ink);
+  box-shadow: var(--shadow-yellow);
+  border-radius: 2px;
+}
+.sketch-box-red {
+  border: var(--border-red);
+  box-shadow: var(--shadow-red);
+  border-radius: 2px;
+}
+
+.stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2.5px solid currentColor;
+  padding: 3px 10px;
+  transform: rotate(-2deg);
+}
+
+/* Section wrapper */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--sp-xl);
+}
+
+/* Section header */
+.section-header {
+  margin-bottom: 56px;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 2px;
+  background: currentColor;
+}
+.section-title {
+  font-family: var(--font-marker);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/* Buttons */
+.btn-primary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--yellow);
+  border: 3px solid var(--ink);
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: var(--shadow-blue);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--blue);
+}
+
+.btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 5px 5px 0 var(--faint);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.btn-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--faint);
+}
+/* ═══════════════════════════════════════════
+   COMPONENTS CSS — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+/* ── NAV ────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 4px solid var(--yellow);
+  padding: 0 var(--sp-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-logo {
+  font-family: var(--font-marker);
+  font-size: 22px;
+  color: var(--yellow);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: clamp(9px,1.8vw,11px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  transition: transform var(--t-mid);
+}
+
+/* ── TICKER TAPE ────────────────────────── */
+.ticker-wrap {
+  background: var(--blue);
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 30s linear infinite;
+}
+.ticker-inner span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  padding: 0 32px;
+}
+.ticker-inner span::before {
+  content: '★ ';
+  color: var(--yellow);
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-wrap:hover .ticker-inner {
+  animation-play-state: paused;
+}
+
+/* ── CARDS: EVENTS ──────────────────────── */
+.event-card {
+  background: white;
+  border: 3px solid var(--ink);
+  padding: 28px 24px;
+  position: relative;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.event-card:nth-child(odd)  {
+  box-shadow: 6px 6px 0 var(--blue);
+  transform: rotate(-0.5deg);
+}
+.event-card:nth-child(even) {
+  box-shadow: 6px 6px 0 var(--yellow);
+  transform: rotate(0.5deg);
+}
+.event-card:hover {
+  transform: rotate(0deg) translate(-2px, -2px);
+}
+.event-date-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 16px;
+}
+.event-title {
+  font-family: var(--font-marker);
+  font-size: 22px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.event-desc {
+  font-size: 13px;
+  color: #5a5248;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.event-mode {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+.event-badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--red);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 3px 10px;
+  border: 2px solid var(--ink);
+  text-transform: uppercase;
+}
+.event-badge.completed {
+  background: var(--green);
+}
+/* ── CARDS: BUILDS ──────────────────────── */
+.build-card {
+  position: relative; /* IMP: Tape ko card ke upar rokne ke liye */
+  background: white;
+  border: 3px solid var(--ink);
+  padding: 24px 22px;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.build-card:nth-child(3n+1) { box-shadow: 5px 5px 0 var(--blue); }
+.build-card:nth-child(3n+2) { box-shadow: 5px 5px 0 var(--green); }
+.build-card:nth-child(3n+3) { box-shadow: 5px 5px 0 var(--red); }
+.build-card:hover { transform: translate(-3px, -3px); }
+
+/* Placeholder Card (Ispe tape nahi lagega) */
+.build-card.placeholder {
+  border-style: dashed;
+  box-shadow: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+/* ── MASKING TAPE EFFECT (PERFECT CORNER ALIGNMENT) ── */
+.build-card:not(.placeholder)::after {
+  content: '';
+  position: absolute;
+  width: 95px;       
+  height: 28px;      
+  background: #E3DAC6; 
+  box-shadow: 2px 3px 5px rgba(0,0,0,0.15); 
+  border-left: 3px dotted rgba(0,0,0,0.12);  
+  border-right: 3px dotted rgba(0,0,0,0.12); 
+  z-index: 10;
+  pointer-events: none; 
+}
+
+/* Sabhi tapes ko top-left corner par ekdum perfect lock kiya hai */
+.build-card:nth-child(3n+1):not(.placeholder)::after {
+  top: -12px;
+  left: -28px;
+  transform: rotate(-38deg);
+}
+.build-card:nth-child(3n+2):not(.placeholder)::after {
+  top: -10px;
+  left: -26px;
+  transform: rotate(-36deg);
+  background: #DCD3BE; /* Thoda darker shade */
+}
+.build-card:nth-child(3n+3):not(.placeholder)::after {
+  top: -13px;
+  left: -29px;
+  transform: rotate(-39deg);
+}
+
+/* Tags, Title, Author, etc. (Purana Code Same) */
+.build-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  display: inline-block;
+  padding: 3px 9px;
+  margin-bottom: 14px;
+}
+.build-title {
+  font-family: var(--font-marker);
+  font-size: 20px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.build-author {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 10px;
+}
+.build-desc {
+  font-size: 13px;
+  color: #5a5248;
+  line-height: 1.65;
+}
+.build-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transition: opacity var(--t-fast);
+}
+.build-link:hover { opacity: 0.7; }
+
+/* ── JOIN FORM ──────────────────────────── */
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.join-field {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: white;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  outline: none;
+  color: var(--ink);
+  transition: box-shadow var(--t-fast);
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.join-field:focus {
+  box-shadow: 6px 6px 0 var(--blue);
+}
+.join-field::placeholder { color: #aaa; }
+.join-submit {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--yellow);
+  border: 3px solid var(--ink);
+  padding: 16px 32px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 var(--red);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  width: 100%;
+}
+.join-submit:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--red);
+}
+.join-thanks {
+  display: none;
+  font-family: var(--font-marker);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  border: 3px solid var(--ink);
+  background: white;
+  box-shadow: var(--shadow-ink);
+}
+
+/* ── FOOTER ─────────────────────────────── */
+.footer {
+  background: var(--ink);
+  border-top: 4px solid var(--yellow);
+  padding: 60px 60px 40px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 32px;
+}
+.footer-brand-name {
+  font-family: var(--font-marker);
+  font-size: 28px;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+.footer-brand-desc {
+  font-size: 13px;
+  color: #7a7268;
+  line-height: 1.8;
+  max-width: 280px;
+}
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(255,229,102,0.3);
+}
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  font-size: 13px;
+  color: #7a7268;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 20px;
+}
+.footer-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #5a5248;
+  letter-spacing: 1px;
+}
+
+/* ── SOCIAL PILLS ───────────────────────── */
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.social-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 3px solid var(--ink);
+  background: white;
+  box-shadow: 3px 3px 0 var(--ink);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.social-pill:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* ── LOADING SPINNER ────────────────────── */
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.loading-spinner::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--faint);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── ERROR STATE ────────────────────────── */
+.error-state {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--red);
+  border: 3px dashed var(--red);
+}
+/* ═══════════════════════════════════════════
+   SECTIONS CSS — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+/* ── HERO ───────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  background-color: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  margin-top: clamp(-150px, -10vw, -80px);
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 31px,
+    var(--faint) 31px, var(--faint) 32px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  left: 88px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(214, 59, 47, 0.35);
+  z-index: 1;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+  padding: clamp(120px, 15vw, 200px) 60px 80px clamp(40px, 8vw, 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '//';
+  color: var(--red);
+}
+.hero-h1 {
+  font-family: var(--font-marker);
+  font-size: clamp(52px, 7vw, 84px);
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.hero-h1 .underlined {
+  position: relative;
+  display: inline-block;
+}
+.hero-h1 .underlined::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  height: 12px;
+  background: var(--yellow);
+  z-index: -1;
+  transform: rotate(-1deg) skewX(-3deg);
+}
+.hero-sub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #3a3530;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Hero right — stat card */
+.hero-right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 60px 60px 40px;
+}
+.hero-doodle-card {
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  border: 4px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  padding: 36px;
+  transform: rotate(1.5deg);
+  position: relative;
+}
+.hero-doodle-card::before {
+  content: '★ PINNED';
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  background: var(--red);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 12px;
+  border: 2px solid var(--ink);
+}
+.doodle-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.doodle-stat {
+  border: 3px solid var(--ink);
+  padding: 16px 12px;
+  text-align: center;
+  background: var(--cream);
+}
+.doodle-stat.blue   { background: #EBF1FD; border-color: var(--blue);  box-shadow: 3px 3px 0 var(--blue); }
+.doodle-stat.yellow { background: #FFFBE0; border-color: var(--ink);   box-shadow: 3px 3px 0 var(--yellow); }
+.doodle-stat.red    { background: #FDECEA; border-color: var(--red);   box-shadow: 3px 3px 0 var(--red); }
+.doodle-stat.green  { background: #E6F4EA; border-color: var(--green); box-shadow: 3px 3px 0 var(--green); }
+.doodle-stat-num {
+  font-family: var(--font-marker);
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.doodle-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #555;
+}
+.doodle-tagline {
+  font-family: var(--font-marker);
+  font-size: 18px;
+  text-align: center;
+  padding: 14px;
+  background: var(--yellow);
+  border: 3px solid var(--ink);
+  transform: rotate(-0.5deg);
+}
+
+/* ── ABOUT ──────────────────────────────── */
+#about {
+  background: var(--ink);
+  padding: var(--sp-2xl) var(--sp-xl);
+}
+#about .section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+#about .section-label { color: var(--yellow); }
+#about .section-label::after { background: var(--yellow); }
+#about .section-title { color: var(--cream); }
+#about p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #B0A898;
+  margin-bottom: 20px;
+}
+#about p strong { color: var(--yellow); }
+
+.manifesto-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.manifesto-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  transition: background var(--t-mid), border-color var(--t-mid);
+  cursor: default;
+}
+.manifesto-line:hover {
+  background: rgba(255,229,102,0.07);
+  border-color: var(--yellow);
+}
+.manifesto-num {
+  font-family: var(--font-marker);
+  font-size: 28px;
+  color: var(--yellow);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.manifesto-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── EVENTS ─────────────────────────────── */
+#events {
+  background: var(--cream);
+  padding: var(--sp-2xl) var(--sp-xl);
+}
+#events .section-inner { max-width: 1200px; margin: 0 auto; }
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── BUILDS ─────────────────────────────── */
+#builds {
+  background: var(--paper);
+  padding: var(--sp-2xl) var(--sp-xl);
+  position: relative;
+}
+#builds::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 31px,
+    rgba(0,0,0,0.055) 31px, rgba(0,0,0,0.055) 32px
+  );
+  pointer-events: none;
+}
+#builds .section-inner { position: relative; }
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 24px; /* Pehle sirf '24px' tha. Ab Top/Bottom 48px aur Left/Right 24px hai */
+}
+
+/* ── ROADMAP ────────────────────────────── */
+#roadmap {
+  background: var(--cream);
+  padding: var(--sp-2xl) var(--sp-xl);
+}
+#roadmap .section-header { text-align: center; }
+#roadmap .section-label  { justify-content: center; }
+
+.roadmap-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 20px;
+}
+.roadmap-track::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0px, var(--ink) 8px,
+    transparent 8px, transparent 16px
+  );
+  z-index: 0;
+}
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  z-index: 1;
+}
+.roadmap-circle {
+  width: 80px;
+  height: 80px;
+  border: 4px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: var(--cream);
+  margin-bottom: 20px;
+}
+.roadmap-step:nth-child(1) .roadmap-circle { background: #EBF1FD; box-shadow: 4px 4px 0 var(--blue); }
+.roadmap-step:nth-child(2) .roadmap-circle { background: #FDECEA; box-shadow: 4px 4px 0 var(--red); }
+.roadmap-step:nth-child(3) .roadmap-circle { background: #FFFBE0; box-shadow: 4px 4px 0 var(--yellow); }
+.roadmap-step:nth-child(4) .roadmap-circle { background: #E6F4EA; box-shadow: 4px 4px 0 var(--green); }
+.roadmap-step:nth-child(5) .roadmap-circle { background: var(--ink); box-shadow: 4px 4px 0 var(--blue); color: var(--yellow); }
+.roadmap-step-title {
+  font-family: var(--font-marker);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.roadmap-step-desc {
+  font-size: 12px;
+  color: #6a6258;
+  line-height: 1.6;
+}
+
+/* ── JOIN ───────────────────────────────── */
+#join {
+  background: var(--yellow);
+  padding: var(--sp-2xl) var(--sp-xl);
+  border-top: 5px solid var(--ink);
+  border-bottom: 5px solid var(--ink);
+}
+#join .section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+#join .section-label { color: var(--red); }
+#join .section-label::after { background: var(--red); }
+#join .section-title { color: var(--ink); }
+#join p { font-size: 16px; line-height: 1.8; color: #3a3530; }
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+/* ── TABLET (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left  { padding: 100px 48px 40px 80px; }
+  .hero-right { padding: 20px 48px 60px; }
+
+  #about .section-inner,
+  #join  .section-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .events-grid  { grid-template-columns: 1fr 1fr; }
+  .builds-grid  { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── MOBILE (≤ 768px) ── */
+@media (max-width: 768px) {
+  :root {
+    --sp-xl:  24px;
+    --sp-2xl: 64px;
+  }
+
+  /* Nav */
+  .nav { padding: 0 clamp(12px,3vw,40px); }
+  .nav-links {
+    display: flex;
+    flex-direction: row; 
+    gap: 8px;
+    flex-wrap: nowrap; 
+  }
+  .nav-links a{
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 0;
+  }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    border-bottom: 3px solid var(--yellow);
+    z-index: 99;
+  }
+  .nav-links.open a {
+    display: block;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-hamburger { display: none; }
+
+  /* Hero */
+  #hero::after { left: 32px; }
+  .hero-left  { padding: 80px 24px 40px 52px; }
+  .hero-right { padding: 10px 24px 56px; }
+  .hero-doodle-card { transform: none; }
+
+  /* Grids → single column */
+  .events-grid  { grid-template-columns: 1fr; }
+  .builds-grid  { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Roadmap → vertical */
+  .roadmap-track {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .roadmap-track::before { display: none; }
+  .roadmap-step { flex-direction: row; text-align: left; gap: 20px; }
+  .roadmap-circle { flex-shrink: 0; margin-bottom: 0; }
+
+  /* Footer */
+  .footer { padding: 48px 24px 32px; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Events — un-rotate on mobile */
+  .event-card:nth-child(odd),
+  .event-card:nth-child(even) {
+    transform: none;
+  }
+}
+
+/* ── SMALL MOBILE (≤ 420px) ── */
+@media (max-width: 420px) {
+  .hero-h1 { font-size: 44px; }
+  .hero-cta-group { flex-direction: column; }
+  .btn-primary, .btn-secondary { text-align: center; }
+  .doodle-stat-num { font-size: 28px; }
+  .social-links { flex-direction: column; }
+}
+
+  /* ── EFFECTS (Layer 1) ── */
+/* ═══════════════════════════════════════════
+   EFFECTS.CSS — GBC Layer 1 Visual Effects
+   ═══════════════════════════════════════════ */
+
+/* ── CUSTOM CURSOR ───────────────────────── */
+*, *::before, *::after { cursor: none !important; }
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999999 !important;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+  mix-blend-mode: multiply;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999999 !important;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.5;
+}
+
+/* Cursor states */
+body.cursor-hover .cursor-dot {
+  width: 16px; height: 16px;
+  background: var(--blue);
+}
+body.cursor-hover .cursor-ring {
+  width: 52px; height: 52px;
+  border-color: var(--blue);
+  opacity: 0.3;
+}
+body.cursor-click .cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--red);
+}
+body.cursor-text .cursor-dot {
+  width: 3px; height: 22px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+body.cursor-text .cursor-ring {
+  opacity: 0;
+}
+
+/* ── INK TRAIL CANVAS ────────────────────── */
+#ink-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99990;
+  opacity: 0.18;
+}
+
+/* ── PAPER NOISE TEXTURE ─────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99997;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+
+/* ── TYPEWRITER ──────────────────────────── */
+.typed-cursor {
+  font-family: var(--font-marker);
+  font-size: inherit;
+  color: var(--red);
+  animation: blink 0.75s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── PARALLAX LINES (hero notebook lines) ── */
+#hero::before {
+  transition: background-position 0.05s linear;
+  will-change: background-position;
+}
+
+/* ── MAGNETIC BUTTON ─────────────────────── */
+.btn-primary,
+.btn-secondary {
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.1s ease;
+}
+
+/* ── SCROLL REVEAL (base state) ─────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── MANIFESTO LINE HOVER ────────────────── */
+.manifesto-line {
+  transition: background 0.18s ease,
+              border-color 0.18s ease,
+              transform 0.18s ease !important;
+}
+.manifesto-line:hover {
+  transform: translateX(6px) !important;
+}
+
+/* ── CARD HOVER LIFT ─────────────────────── */
+.event-card,
+.build-card:not(.placeholder) {
+  transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.18s ease !important;
+}
+.event-card:hover,
+.build-card:not(.placeholder):hover {
+  transform: translate(-4px, -4px) rotate(0deg) !important;
+}
+
+/* ── TICKER PAUSE ON HOVER ───────────────── */
+.ticker-wrap:hover .ticker-inner {
+  animation-play-state: paused;
+}
+
+/* ── NAV LINK UNDERLINE ANIMATE ──────────── */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: width 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ── HERO CTA ENTRANCE ───────────────────── */
+.hero-eyebrow { animation: fadeSlideUp 0.6s ease both; animation-delay: 0.1s; }
+.hero-h1      { animation: fadeSlideUp 0.7s ease both; animation-delay: 0.25s; }
+.hero-sub     { animation: fadeSlideUp 0.7s ease both; animation-delay: 0.4s; }
+.hero-cta-group { animation: fadeSlideUp 0.7s ease both; animation-delay: 0.55s; }
+.hero-doodle-card { animation: fadeSlideUp 0.8s ease both; animation-delay: 0.35s; }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── DOODLE CARD FLOAT ───────────────────── */
+.hero-doodle-card {
+  animation: fadeSlideUp 0.8s ease both 0.35s,
+             float 4s ease-in-out 1s infinite !important;
+}
+@keyframes float {
+  0%, 100% { transform: rotate(1.5deg) translateY(0px); }
+  50%       { transform: rotate(1.5deg) translateY(-8px); }
+}
+
+/* ── SOCIAL PILL HOVER ───────────────────── */
+.social-pill {
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease !important;
+}
+.social-pill:hover {
+  background: var(--yellow) !important;
+}
+
+/* ── JOIN FIELD FOCUS LABEL ──────────────── */
+.join-field {
+  transition: box-shadow 0.18s ease, border-color 0.18s ease !important;
+}
+
+/* ── STAMP BADGE JIGGLE ──────────────────── */
+.event-badge {
+  animation: stampIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes stampIn {
+  from { transform: scale(0) rotate(-8deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);  opacity: 1; }
+}
+
+/* ── ROADMAP STEP PULSE (on hover) ──────── */
+.roadmap-circle {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.roadmap-step:hover .roadmap-circle {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* ── REDUCED MOTION OVERRIDE ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-doodle-card { animation: none !important; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+  *, *::before, *::after { cursor: auto !important; }
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING PINNED NOTE & OVERLAY MODAL
+   ═══════════════════════════════════════════ */
+
+/* 1. Kone wala Sticky Note Shape */
+/* 1. Continuous Wiggle Animation */
+@keyframes stickyWiggle {
+  0%   { transform: rotate(-6deg) translateY(0px); }
+  50%  { transform: rotate(-2deg) translateY(-4px) scale(1.02); }
+  100% { transform: rotate(-6deg) translateY(0px); }
+}
+
+/* 2. Enhanced Floating Button */
+.floating-updates-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 900;
+  background: var(--yellow);
+  border: 4px solid var(--ink);
+  /* Shadow ko Black se Blue kar diya for maximum contrast */
+  box-shadow: 8px 8px 0 var(--blue); 
+  padding: 16px 24px;
+  font-family: var(--font-marker);
+  font-size: 20px;
+  color: var(--ink);
+  cursor: pointer;
+  line-height: 1.1;
+  /* Animation apply ki */
+  animation: stickyWiggle 2.5s ease-in-out infinite;
+  transition: all 0.2s ease;
+}
+
+/* 3. Hover State - Jhatke se red shadow aur zoom */
+.floating-updates-btn:hover {
+  animation: none; /* Hover pe wiggle ruk jayega */
+  transform: rotate(0deg) scale(1.1) translateY(-5px);
+  box-shadow: 10px 12px 0 var(--red); /* Ekdum pop karega */
+}
+
+/* 4. Pin Tweaks */
+.floating-updates-btn .pin {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px; /* Pin thodi badi ki */
+  filter: drop-shadow(3px 5px 0px rgba(0,0,0,0.4));
+  transition: transform 0.2s;
+}
+.floating-updates-btn:hover .pin {
+  transform: translateX(-50%) rotate(15deg); /* Hover pe pin thodi ghumegi */
+}
+
+/* 2. Fullscreen Pop-up Background */
+.updates-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.95);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+.updates-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  overflow-y: auto;
+}
+
+/* Modal Box (Andar scroll lagane ke liye) */
+.updates-modal-content {
+  background: var(--blue);
+  border: 5px solid var(--ink);
+  width: 100%;
+  max-width: 1100px;
+  max-height: 85vh; /* Screen ki 85% height lega */
+  overflow-y: auto; /* Box ke andar scroll layega */
+  padding: 60px 40px;
+  position: relative;
+  transform: translateY(50px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: auto;
+  box-shadow: 20px 20px 0 var(--ink);
+}
+
+/* Brutalist Scrollbar Design */
+.updates-modal-content::-webkit-scrollbar { width: 14px; }
+.updates-modal-content::-webkit-scrollbar-track { background: var(--ink); border-left: 4px solid var(--ink); }
+.updates-modal-content::-webkit-scrollbar-thumb { background: var(--yellow); border: 3px solid var(--ink); border-radius: 2px; }
+.updates-modal-content::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+/* 4. Brutalist Close Button (Minus Hata Diya) */
+.close-modal-btn {
+  position: absolute;
+  top: 20px; /* Minus hata diya taaki box ke andar rahe */
+  right: 20px; /* Minus hata diya */
+  z-index: 100;
+  background: var(--red);
+  color: white;
+  border: 4px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transform: rotate(4deg);
+  transition: transform 0.2s;
+}
+.close-modal-btn:hover { transform: rotate(0deg) scale(1.1); }
+
+/* Mobile View Fix */
+@media(max-width: 768px) {
+  /* Yahan se bhi minus hata diya */
+  .close-modal-btn { right: 10px; top: 10px; font-size: 12px; } 
+}
+
+/* 5. Folder Grid Styles */
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.update-folder {
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 24px;
+  position: relative;
+}
+.update-folder::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 15px;
+  width: 45px;
+  height: 20px;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-bottom: none;
+}
+.folder-title {
+  font-family: var(--font-marker);
+  font-size: 22px;
+  border-bottom: 3px dashed rgba(0,0,0,0.15);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.folder-links { display: flex; flex-direction: column; gap: 8px; }
+.folder-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  background: white;
+  transition: 0.2s;
+}
+.folder-link:hover {
+  background: var(--yellow);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Hide on very small mobile to prevent overlap */
+@media(max-width: 768px) {
+  .floating-updates-btn { bottom: 20px; right: 20px; padding: 10px 15px; font-size: 16px; }
+  .floating-updates-btn .pin { font-size: 24px; top: -10px; }
+  .close-modal-btn { right: 10px; top: -15px; font-size: 12px; }
+  .updates-modal-content { padding: 40px 20px; }
+}
+  </style>
+  <!-- Typed.js for typewriter effect -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.min.js"></script>
+</head>
+<body>
+
+
+
+<!-- ══════════════════════════ HIGH-VISIBILITY BRUTALIST NAV BAR ══════════════════════════ -->
+<nav style="position: sticky; top: 0; z-index: 100; background: var(--ink); border-bottom: 4px solid var(--yellow); padding: 15px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; min-height: 80px;">
+  
+  <!-- Logo Section -->
+  <a href="#hero" class="nav-logo" style="display: flex; align-items: center;">
+    <img src="https://github.com/CODERUDRA-X/gsa-vibe-asset/blob/main/file_00000000fb1c720b9405ab5657660b7b.png?raw=true" alt="GBC Logo" style="height: clamp(35px, 5vw, 45px); width: auto; border-radius: 4px;">
+  </a>
+  
+  <!-- Brutalist Custom Tabs -->
+  <ul class="nav-links" style="display: flex; gap: clamp(10px, 2vw, 20px); list-style: none; align-items: center; flex-wrap: wrap;">
+    <li><a href="#about" class="brutal-tab tab-yellow">About</a></li>
+    <li><a href="#events" class="brutal-tab tab-blue">Events</a></li>
+    <li><a href="#builds" class="brutal-tab tab-green">Builds</a></li>
+    <li><a href="#roadmap" class="brutal-tab tab-red">Path</a></li>
+    <li><a href="#join" class="brutal-tab tab-cream">Join</a></li>
+  </ul>
+
+  <!-- Style Block for Unique Static Rotations & Colors -->
+  <style>
+    .brutal-tab {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink) !important;
+      text-decoration: none;
+      padding: 5px 12px;
+      border: 2px solid var(--ink);
+      display: inline-block;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    /* Distributing solid high-contrast colors without hover */
+    .tab-yellow { background-color: var(--yellow); box-shadow: 3px 3px 0 var(--blue); transform: rotate(-1.5deg); }
+    .tab-blue   { background-color: #EBF1FD;     box-shadow: 3px 3px 0 var(--red);  transform: rotate(2deg); }
+    .tab-green  { background-color: #E6F4EA;     box-shadow: 3px 3px 0 var(--yellow); transform: rotate(-2deg); }
+    .tab-red    { background-color: #FDECEA;     box-shadow: 3px 3px 0 var(--green); transform: rotate(1deg); }
+    .tab-cream  { background-color: var(--cream);  box-shadow: 3px 3px 0 var(--blue); transform: rotate(-1deg); }
+
+    /* Clean snap effect on hover */
+    .brutal-tab:hover {
+      transform: scale(1.08) rotate(0deg) !important;
+      box-shadow: 4px 4px 0 var(--ink) !important;
+    }
+  </style>
+</nav>
+
+<div style="position: relative; width: 100%; padding: clamp(40px, 5vw, 80px) 20px 120px; background: var(--cream); overflow: hidden; display: flex; align-items: center; justify-content: center; z-index: 50;">  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 35px; background-image: radial-gradient(#d0cbbb 2px, transparent 2px); background-size: 30px 30px; opacity: 0.8; z-index: 1;"></div>
+
+  <div style="position: relative; z-index: 10; width: 90vw; max-width: 750px;">
+    
+    <div class="brutal-float" style="position: absolute; left: -5%; top: 10%; background: var(--yellow); border: clamp(2px, 0.5vw, 4px) solid var(--ink); box-shadow: clamp(2px, 1vw, 6px) clamp(2px, 1vw, 6px) 0 var(--ink); padding: clamp(4px, 1vw, 10px) clamp(8px, 2vw, 20px); font-family: 'Space Mono', monospace; font-size: clamp(8px, 1.8vw, 13px); font-weight: 900; z-index: 15; --rot: -12deg;">
+      // SHIP_IT_FAST 🚀
+    </div>
+
+    <div class="brutal-float float-delay" style="position: absolute; right: -5%; bottom: 10%; background: #EBF1FD; border: clamp(2px, 0.5vw, 4px) solid var(--ink); box-shadow: clamp(2px, 1vw, 6px) clamp(2px, 1vw, 6px) 0 var(--red); padding: clamp(4px, 1vw, 10px) clamp(8px, 2vw, 20px); font-family: 'Space Mono', monospace; font-size: clamp(8px, 1.8vw, 13px); font-weight: 900; z-index: 15; --rot: 10deg;">
+      &lt;GEMINI_API&gt; ⚡
+    </div>
+
+    <div class="brutal-float" style="position: absolute; right: 5%; top: -5%; background: var(--red); color: white; border: clamp(2px, 0.4vw, 3px) solid var(--ink); box-shadow: clamp(2px, 0.8vw, 5px) clamp(2px, 0.8vw, 5px) 0 var(--ink); padding: clamp(3px, 0.8vw, 6px) clamp(6px, 1.5vw, 10px); font-family: 'Space Mono', monospace; font-size: clamp(7px, 1.5vw, 11px); font-weight: bold; z-index: 15; --rot: 5deg;">
+      [ 48H SPRINT ]
+    </div>
+
+    <div style="transition: transform 0.2s ease-out; cursor: crosshair;" oncontextmenu="return false;" onmouseover="this.style.transform='scale(1.03) rotate(1deg)'" onmouseout="this.style.transform='scale(1) rotate(-2deg)'">
+      <img src="https://github.com/CODERUDRA-X/gsa-vibe-asset/blob/main/file_00000000fb1c720b9405ab5657660b7b.png?raw=true" alt="Main Banner" draggable="false" style="width: 100%; height: auto; display: block; border: clamp(2px, 0.8vw, 5px) solid var(--ink); box-shadow: clamp(8px, 2.5vw, 20px) clamp(8px, 2.5vw, 20px) 0 var(--blue); transform: rotate(-2deg); background: white; pointer-events: none; user-select: none;">
+    </div>
+
+  </div>
+
+  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 35px; z-index: 20;">
+    <div style="position: absolute; inset: 0; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 35'%3E%3Cpolyline points='0,15 15,22 35,12 55,25 80,18 100,28 135,10 165,22 190,14 215,26 245,15 285,28 320,12 360,25 385,18 400,22' fill='none' stroke='rgba(0,0,0,0.15)' stroke-width='6' transform='translate(0, 3)'/%3E%3Cpath d='M0,0 L0,15 L15,22 L35,12 L55,25 L80,18 L100,28 L135,10 L165,22 L190,14 L215,26 L245,15 L285,28 L320,12 L360,25 L385,18 L400,22 L400,0 Z' fill='%23F5F0E8'/%3E%3Cpolyline points='0,15 15,22 35,12 55,25 80,18 100,28 135,10 165,22 190,14 215,26 245,15 285,28 320,12 360,25 385,18 400,22' fill='none' stroke='%23FFFFFF' stroke-width='4' stroke-linejoin='round' transform='translate(0, 0)'/%3E%3Cpolyline points='0,15 15,22 35,12 55,25 80,18 100,28 135,10 165,22 190,14 215,26 245,15 285,28 320,12 360,25 385,18 400,22' fill='none' stroke='%231A1A1A' stroke-width='2' stroke-linejoin='round' transform='translate(0, -1)'/%3E%3C/svg%3E&quot;); background-repeat: repeat-x; background-position: bottom;"></div>
+    <div style="position: absolute; bottom: 25px; left: 12%; font-family: 'Space Mono', monospace; font-size: 14px; color: var(--red); font-weight: bold; transform: rotate(15deg);">+</div>
+    <div style="position: absolute; bottom: 8px; left: 22%; width: 6px; height: 6px; background: var(--blue); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: 14px; left: 23%; width: 3px; height: 3px; background: var(--blue); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: 18px; right: 35%; width: 25px; height: 8px; background: var(--yellow); border: 1.5px solid var(--ink); transform: rotate(-10deg);"></div>
+    <div style="position: absolute; bottom: -2px; right: 15%; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--ink); font-weight: bold;">&lt;/&gt;</div>
+  </div>
+
+  <style>
+    @keyframes brutalBounce { 0%, 100% { transform: translateY(0) rotate(var(--rot)); } 50% { transform: translateY(-10px) rotate(calc(var(--rot) + 3deg)); } }
+    .brutal-float { animation: brutalBounce 3.5s infinite ease-in-out; transform: rotate(var(--rot)); }
+    .float-delay { animation-delay: 1.5s; }
+  </style>
+</div>
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-left">
+      <h1 class="hero-h1">
+        We Don't<br/>
+        Just Use AI.<br/>
+        We <span class="underlined">Build</span><br/>
+        With It.
+      </h1>
+      <p class="hero-sub">
+        A student-run builder community where ideas get shipped, prompts get engineered, and curious people become creators.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#join"   class="btn-primary">→ Join the Community</a>
+        <a href="#builds" class="btn-secondary">See What We've Built</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-doodle-card">
+        <div class="doodle-stat-grid">
+          <div class="doodle-stat blue">
+            <div class="doodle-stat-num" style="color:var(--blue);" data-stat="members">600+</div>
+            <div class="doodle-stat-label">Members</div>
+          </div>
+          <div class="doodle-stat yellow">
+            <div class="doodle-stat-num" data-stat="sessions">3</div>
+            <div class="doodle-stat-label">Sessions Run</div>
+          </div>
+          <div class="doodle-stat green">
+            <div class="doodle-stat-num" style="color:var(--green);" data-stat="builds">∞</div>
+            <div class="doodle-stat-label">Builds Ahead</div>
+          </div>
+          <div class="doodle-stat red">
+            <div class="doodle-stat-num" style="color:var(--red);" data-stat="campuses">01</div>
+            <div class="doodle-stat-label">College. One Mission.</div>
+          </div>
+        </div>
+        <div class="doodle-tagline">Building India's next AI builders 🇮🇳</div>
+      </div>
+    </div>
+  </div>
+
+<!-- TICKER -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-inner">
+      <!-- Sequence 1 -->
+      <span style="display: inline-flex; align-items: center;"><img src="ugi.png" alt="UIT Logo" style="height: 24px; padding: 2px 6px; background: white; border-radius: 4px; margin-right: 10px;">UIT PRAYAGRAJ</span>
+      <span style="color: var(--yellow);">🚀 NEW: MICROSOFT LEARNING HUB NOW LIVE</span>
+      <span style="display: inline-flex; align-items: center;"><img src="ms.png" alt="MS Logo" style="height: 20px; padding: 3px 6px; background: white; border-radius: 4px; margin-right: 10px;">MASTER AZURE & COPILOT</span>
+      <span style="color: var(--green);">⚡ POWERED BY CODERUDRA-X</span>
+      <span>SHIP REAL AI PROJECTS</span>
+      <span>BUILDERS OVER CONSUMERS</span>
+      
+      <!-- Sequence 2 Repeated for Continuous Scrolling -->
+      <span style="display: inline-flex; align-items: center;"><img src="ugi.png" alt="UIT Logo" style="height: 24px; padding: 2px 6px; background: white; border-radius: 4px; margin-right: 10px;">UIT PRAYAGRAJ</span>
+      <span style="color: var(--yellow);">🚀 NEW: MICROSOFT LEARNING HUB NOW LIVE</span>
+      <span style="display: inline-flex; align-items: center;"><img src="ms.png" alt="MS Logo" style="height: 20px; padding: 3px 6px; background: white; border-radius: 4px; margin-right: 10px;">MASTER AZURE & COPILOT</span>
+      <span style="color: var(--green);">⚡ POWERED BY CODERUDRA-X</span>
+      <span>SHIP REAL AI PROJECTS</span>
+      <span>BUILDERS OVER CONSUMERS</span>
+
+      <!-- Sequence 3 Repeat -->
+      <span style="display: inline-flex; align-items: center;"><img src="ugi.png" alt="UIT Logo" style="height: 24px; padding: 2px 6px; background: white; border-radius: 4px; margin-right: 10px;">UIT PRAYAGRAJ</span>
+      <span style="color: var(--yellow);">🚀 NEW: MICROSOFT LEARNING HUB NOW LIVE</span>
+      <span style="display: inline-flex; align-items: center;"><img src="ms.png" alt="MS Logo" style="height: 20px; padding: 3px 6px; background: white; border-radius: 4px; margin-right: 10px;">MASTER AZURE & COPILOT</span>
+      <span style="color: var(--green);">⚡ POWERED BY CODERUDRA-X</span>
+      <span>SHIP REAL AI PROJECTS</span>
+      <span>BUILDERS OVER CONSUMERS</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about">
+    <div class="section-inner">
+      <div>
+        <div class="section-header">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">Not a Club.<br/>A Movement.</h2>
+        </div>
+        <p>The <strong>Gemini Builders Community</strong> is a student-led initiative at United Institute of Technology, Prayagraj — built under the Google Student Ambassador program. We exist for one reason: to turn curious students into confident AI builders.</p>
+        <p>No gatekeeping. No prior experience required. Just bring your curiosity and your willingness to break things and learn from it.</p>
+        <p>We run hands-on sessions, ship real projects, and grow together — one build at a time.</p>
+      </div>
+      <div class="manifesto-lines">
+        <div class="manifesto-line"><div class="manifesto-num">01</div><div class="manifesto-text">Builders over consumers — we create, not just use</div></div>
+        <div class="manifesto-line"><div class="manifesto-num">02</div><div class="manifesto-text">Learning is a team sport — share what you know</div></div>
+        <div class="manifesto-line"><div class="manifesto-num">03</div><div class="manifesto-text">Ship ugly early — perfect kills momentum</div></div>
+        <div class="manifesto-line"><div class="manifesto-num">04</div><div class="manifesto-text">Real problems only — no toy demos, build for impact</div></div>
+        <div class="manifesto-line"><div class="manifesto-num">05</div><div class="manifesto-text">India needs its own AI story — we're writing it</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Sessions &amp; Events</div>
+        <h2 class="section-title">What We've<br/>Been Up To</h2>
+      </div>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-badge completed">✓ Done</div>
+          <div class="event-date-tag">March 2026</div>
+          <h3 class="event-title">India Tech Summit: Innovate 2026</h3>
+          <p class="event-desc">A Pan-India AI innovation hackathon conducted under the Google Student Ambassador ecosystem. Students collaborated on real-world solutions using Gemini, Google Cloud, and Firebase while competing across multiple phases of innovation.</p>
+          <div class="event-mode">✓ COMPLETED • 2500+ PARTICIPANTS • 110+ COLLEGES</div>
+        </div>
+        <div class="event-card">
+          <div class="event-badge completed">✓ Done</div>
+          <div class="event-date-tag">November 2025</div>
+          <h3 class="event-title">Vibe Coding Hack</h3>
+          <p class="event-desc">A campus-wide AI coding session & Workshops introducing students to modern development workflows using Gemini AI. Participants explored prompt-driven coding, debugging, project structuring, and rapid prototyping through live demonstrations and hands-on activities.</p>
+          <div class="event-mode">✓ COMPLETED • 600+ ATTENDEES</div>
+        </div>
+        <div class="event-card">
+          <div class="event-badge">Upcoming</div>
+          <div class="event-date-tag">TBA · 2025</div>
+          <h3 class="event-title">AI for Real Problems</h3>
+          <p class="event-desc">A workshop focused on applying AI to actual problems in agriculture, healthcare, and local governance — not just tech demos.</p>
+          <div class="event-mode">🌍 Impact Focus</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDS -->
+  <div id="builds">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label" style="color:var(--red);">Community Builds</div>
+        <h2 class="section-title">Things We've<br/>Actually Shipped</h2>
+      </div>
+      <div class="builds-grid">
+        <div class="build-card"><span class="build-tag">Prompt Tool</span><h3 class="build-title">Project Name Here</h3><div class="build-author">by @handle · Role</div><p class="build-desc">Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.</p></div>
+        <div class="build-card"><span class="build-tag">AI Research</span><h3 class="build-title">Project Name Here</h3><div class="build-author">by @handle · Role</div><p class="build-desc">Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.</p></div>
+        <div class="build-card"><span class="build-tag">Automation</span><h3 class="build-title">Project Name Here</h3><div class="build-author">by @handle · Role</div><p class="build-desc">Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.</p></div>
+        <div class="build-card"><span class="build-tag">Web App</span><h3 class="build-title">Project Name Here</h3><div class="build-author">by @handle · Role</div><p class="build-desc">Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.</p></div>
+        <div class="build-card"><span class="build-tag">Vision AI</span><h3 class="build-title">Project Name Here</h3><div class="build-author">by @handle · Role</div><p class="build-desc">Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.</p></div>
+        <div class="build-card placeholder">
+          <div style="text-align:center;">
+            <div style="font-family:var(--font-marker);font-size:42px;color:var(--faint);margin-bottom:8px;">+</div>
+            <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:2px;color:#aaa;text-transform:uppercase;">Your build<br/>could be here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <section id="roadmap">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Builder's Path</div>
+        <h2 class="section-title">From Zero to<br/>Actually Building</h2>
+      </div>
+      <div class="roadmap-track">
+        <div class="roadmap-step">
+          <div class="roadmap-circle">📖</div>
+          <div class="roadmap-step-title">Learn</div>
+          <div class="roadmap-step-desc">Attend sessions. Read docs. Build your mental model of how AI actually works.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-circle">🧪</div>
+          <div class="roadmap-step-title">Experiment</div>
+          <div class="roadmap-step-desc">Break things on purpose. Test every assumption. Fail fast in your own sandbox.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-circle">🔨</div>
+          <div class="roadmap-step-title">Build</div>
+          <div class="roadmap-step-desc">Ship something real. Ugly is fine. Working beats perfect every single time.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-circle">📢</div>
+          <div class="roadmap-step-title">Share</div>
+          <div class="roadmap-step-desc">Post what you built. Teach someone else. Knowledge compounds when it moves.</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-circle">🚀</div>
+          <div class="roadmap-step-title">Lead</div>
+          <div class="roadmap-step-desc">Run a session. Mentor a new member. Become the person you wished you had.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <div id="join">
+    <div class="section-inner">
+      <div>
+        <div class="section-header">
+          <div class="section-label">Join Up</div>
+          <h2 class="section-title">Ready to<br/>Build Something?</h2>
+        </div>
+        <p>Drop your name and we'll pull you into the community. No forms, no essays, no prerequisites. Just show up with your curiosity and a willingness to try.</p>
+        <div class="social-links">
+          <a href="https://discord.gg/sw9ATkbZj" class="social-pill">💬 Discord</a>
+          <a href="https://www.linkedin.com/company/gsauit/" class="social-pill">💼 LinkedIn</a>
+          <a href="https://chat.whatsapp.com/Eaut7cUSYPwH7ww3SlZul1" class="social-pill">📲 WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <!-- Honeypot -->
+        <input type="text" name="hp" style="display:none;" tabindex="-1" autocomplete="off"/>
+        <form class="join-form" id="gbc-join-form">
+          <input type="text"  id="gbc-name"  class="join-field" placeholder="Your Name" required/>
+          <input type="email" id="gbc-email" class="join-field" placeholder="Email Address" required/>
+          <input type="text"  id="gbc-idea"  class="join-field" placeholder="What do you want to build?"/>
+          <button type="submit" class="join-submit" id="gbc-btn">→ Count Me In</button>
+        </form>
+        <p id="join-thanks" style="display:none;font-family:'Permanent Marker',cursive;font-size:20px;text-align:center;margin-top:20px;padding:20px;border:3px solid var(--ink);background:white;box-shadow:5px 5px 0 var(--ink);">
+          You're in. Welcome, Builder. 🎉
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ LATEST INTEL FLOATING TAG & MODAL ══════════════════════════ -->
+  <!-- 1. Floating Pinned Note -->
+  <button id="btn-open-updates" class="floating-updates-btn">
+    <span class="pin">📌</span>
+    LATEST<br>UPDATES
+  </button>
+
+  <!-- ══════════════════════════ OVERLAY MODAL (FULL DIRECTORY) ══════════════════════════ -->
+  <div id="updates-modal" class="updates-modal-overlay">
+    <div class="updates-modal-content">
+      
+      <button id="btn-close-updates" class="close-modal-btn">[ X ] CLOSE FILES</button>
+      
+      <div class="section-header" style="margin-bottom: 40px;">
+        <div class="section-label" style="color:var(--yellow);">Resource Directory</div>
+        <h2 class="section-title" style="color:white; line-height: 1.1; display: flex; flex-direction: column;">
+  <!-- Pulled text up using negative margin -->
+  <img src="ms.png" alt="Microsoft" style="width: clamp(200px, 35vw, 340px); height: auto; object-fit: contain; align-self: flex-start; margin-bottom: -10px;">
+  <span style="position: relative; z-index: 2;">Learning Hub</span>
+</h2>
+      </div>
+      
+      <div class="updates-grid">
+        
+        <!-- FOLDER 1 -->
+        <div class="update-folder" style="transform: rotate(-1deg);">
+          <h3 class="folder-title">🤖 AI & Copilot</h3>
+          <div class="folder-links">
+            <a href="https://copilot.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Copilot Hub</a>
+            <a href="https://microsoft.com/microsoft-365/copilot-learning-center?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learning Center</a>
+            <a href="https://microsoft.com/microsoft-copilot/for-individuals?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] For Individuals</a>
+            <a href="https://learn.microsoft.com/copilot?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn Docs</a>
+            <a href="https://microsoft.com/microsoft-365-copilot?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] M365 Copilot</a>
+          </div>
+        </div>
+
+        <!-- FOLDER 2 -->
+        <div class="update-folder" style="transform: rotate(1.5deg);">
+          <h3 class="folder-title">☁️ Azure & Cloud</h3>
+          <div class="folder-links">
+            <a href="https://azure.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Microsoft Azure</a>
+            <a href="https://developer.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] MS Developer</a>
+            <a href="https://azure.microsoft.com/free?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Azure Free</a>
+            <a href="https://dotnet.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] .NET Hub</a>
+            <a href="https://azure.microsoft.com/free/students?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Azure for Students</a>
+            <a href="https://learn.microsoft.com/developer?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn Developer</a>
+            <a href="https://code.visualstudio.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] VS Code</a>
+            <a href="https://microsoft.com/microsoft-cloud/blog?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Cloud Blog</a>
+            <a href="https://devblogs.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Dev Blogs</a>
+          </div>
+        </div>
+
+        <!-- FOLDER 3 -->
+        <div class="update-folder" style="transform: rotate(-0.5deg);">
+          <h3 class="folder-title">📊 Data & Fabric</h3>
+          <div class="folder-links">
+            <a href="https://microsoft.com/microsoft-fabric?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] MS Fabric</a>
+            <a href="https://blog.fabric.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Fabric Blog</a>
+            <a href="https://community.fabric.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Fabric Community</a>
+            <a href="https://learn.microsoft.com/fabric?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn Fabric</a>
+          </div>
+        </div>
+
+        <!-- FOLDER 4 -->
+        <div class="update-folder" style="transform: rotate(0.5deg);">
+          <h3 class="folder-title">💻 Programming</h3>
+          <div class="folder-links">
+            <a href="https://azure.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Azure Hub</a>
+            <a href="https://developer.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Developer Portal</a>
+            <a href="https://dotnet.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] .NET Framework</a>
+            <a href="https://learn.microsoft.com/developer?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn Developer</a>
+            <a href="https://code.visualstudio.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] VS Code</a>
+            <a href="https://devblogs.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Dev Blogs</a>
+          </div>
+        </div>
+
+        <!-- FOLDER 5 -->
+        <div class="update-folder" style="transform: rotate(2deg);">
+          <h3 class="folder-title">⚡ Power Platform</h3>
+          <div class="folder-links">
+            <a href="https://microsoft.com/power-platform?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Power Platform</a>
+            <a href="https://learn.microsoft.com/power-automate?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Power Automate</a>
+            <a href="https://community.powerplatform.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] PP Community</a>
+            <a href="https://learn.microsoft.com/power-bi?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Power BI</a>
+            <a href="https://powerbi.microsoft.com/blog?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Power BI Blog</a>
+            <a href="https://learn.microsoft.com/power-apps?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Power Apps</a>
+            <a href="https://learn.microsoft.com/power-platform?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn PP</a>
+            <a href="https://learn.microsoft.com/power-pages?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Power Pages</a>
+          </div>
+        </div>
+        
+        <!-- FOLDER 6 -->
+        <div class="update-folder" style="transform: rotate(-1.5deg);">
+          <h3 class="folder-title">🚀 Startups</h3>
+          <div class="folder-links">
+            <a href="https://microsoft.com/startups?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] MS Startups</a>
+            <a href="https://learn.microsoft.com/startups?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn Startups</a>
+            <a href="https://microsoft.com/startups/ai?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Startups AI</a>
+            <a href="https://learn.microsoft.com/training/topics/startups?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Startup Topics</a>
+            <a href="https://microsoft.com/startups/blog?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Startups Blog</a>
+            <a href="https://imaginecup.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Imagine Cup</a>
+          </div>
+        </div>
+
+        <!-- FOLDER 7 -->
+        <div class="update-folder" style="transform: rotate(1deg);">
+          <h3 class="folder-title">🧑‍💻 Tech Community</h3>
+          <div class="folder-links">
+            <a href="https://azure.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Azure Community</a>
+            <a href="https://developer.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Developer Space</a>
+            <a href="https://learn.microsoft.com/developer?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Learn Developer</a>
+            <a href="https://code.visualstudio.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] VS Code</a>
+            <a href="https://devblogs.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Dev Blogs</a>
+            <a href="https://techcommunity.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Tech Community</a>
+          </div>
+        </div>
+
+        <!-- FOLDER 8 -->
+        <div class="update-folder" style="transform: rotate(-1deg);">
+          <h3 class="folder-title">🎯 General Skilling</h3>
+          <div class="folder-links">
+            <a href="https://events.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] MS Events</a>
+            <a href="https://reactor.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] MS Reactor</a>
+            <a href="https://learn.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] MS Learn Hub</a>
+            <a href="https://microsoft.com/insidetrack?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Inside Track</a>
+            <a href="https://techcommunity.microsoft.com?wt.mc_id=studentamb_598446" target="_blank" class="folder-link">[ ↗ ] Tech Community</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- THE YELLOW NOTE (WHY EXPLORE) -->
+      <div class="sketch-box-yellow" style="margin-top: 50px; padding: 30px; background: var(--yellow); transform: rotate(-0.5deg);">
+        <h3 style="font-family: var(--font-marker); font-size: 24px; color: var(--ink); margin-bottom: 15px;">🌟 WHY EXPLORE THESE RESOURCES?</h3>
+        <ul style="font-family: var(--font-mono); font-size: 14px; font-weight: bold; color: var(--ink); line-height: 2; margin-left: 10px;">
+          <li>✅ Official Microsoft learning resources</li>
+          <li>✅ AI, Cloud, Data & Programming skills</li>
+          <li>✅ Beginner-friendly learning content</li>
+          <li>✅ Learn at your own pace</li>
+          <li>✅ Build practical technical skills</li>
+          <li>✅ Earn Microsoft Learn achievements & badges</li>
+          <li>✅ Explore modern technologies & career skills</li>
+        </ul>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 3px dashed var(--ink);">
+          <p style="font-family: var(--font-mono); font-size: 12px; color: var(--ink); margin-bottom: 10px;">
+            📌 <strong>NOTE:</strong> Resources are free to explore. Some Microsoft Learn content may offer achievements or badges. Microsoft certification exams have separate requirements.
+          </p>
+          <p style="font-family: var(--font-marker); font-size: 18px; color: var(--red);">
+            🔥 Pick your field. Start learning. Build your skills.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Gemini Builders Community</div>
+        <p class="footer-brand-desc">A student-run AI builder community at United Institute of Technology, Prayagraj. Powered by curiosity, shipped with purpose.</p>
+        <div class="footer-dots">
+          <div class="footer-dot" style="background:var(--blue);"></div>
+          <div class="footer-dot" style="background:var(--red);"></div>
+          <div class="footer-dot" style="background:var(--yellow);"></div>
+          <div class="footer-dot" style="background:var(--green);"></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Community</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#builds">Builds</a></li>
+          <li><a href="#roadmap">Builder's Path</a></li>
+          <li><a href="#join">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <ul class="footer-links">
+          <li><a href="https://discord.gg/sw9ATkbZj">Discord</a></li>
+          <li><a href="https://www.linkedin.com/company/gsauit/">LinkedIn</a></li>
+          <li><a href="https://chat.whatsapp.com/Eaut7cUSYPwH7ww3SlZul1">WhatsApp</a></li>
+          <li><a href="https://developers.google.com/programs">Google Dev</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Gemini Builders Community · UIT Prayagraj · Google Student Ambassadors</div>
+      <div class="footer-copy" style="font-style:italic;color:#bcb2a8;">Building the next generation of AI Builders.</div>
+    </div>
+  </footer>
+
+  
+  <script>
+    'use strict';
+
+    /* ── NAV ── */
+    function initNav() {
+      const hamburger = document.querySelector('.nav-hamburger');
+      const navLinks  = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(a =>
+          a.addEventListener('click', () => navLinks.classList.remove('open'))
+        );
+      }
+      const sections = document.querySelectorAll('section[id], div[id]');
+      const links    = document.querySelectorAll('.nav-links a');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { threshold: 0.35 });
+      sections.forEach(s => obs.observe(s));
+    }
+
+    /* ── JOIN FORM — Make Webhook ── */
+    function initJoinForm() {
+      const form = document.getElementById('gbc-join-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Bot check
+        if (document.querySelector('[name="hp"]').value !== '') return;
+
+        const btn = document.getElementById('gbc-btn');
+        btn.textContent = 'Sending... 🚀';
+        btn.disabled = true;
+
+        const WEBHOOK = 'https://script.google.com/macros/s/AKfycbxI5JPsKIIv4OtYuP9dvzwLzxxRHpXqdI8rt3ZX4XsWBdU_gDMde05AUgoTfHC1eaQySQ/exec';
+
+        const payload = {
+          name:      document.getElementById('gbc-name').value.trim(),
+          email:     document.getElementById('gbc-email').value.trim(),
+          idea:      document.getElementById('gbc-idea').value.trim(),
+          timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          source:    'GBC Website'
+        };
+
+        fetch(WEBHOOK, {
+  method:  'POST',
+  mode:    'no-cors',          // ← yeh zaroori hai
+  headers: { 'Content-Type': 'application/json' },
+  body:    JSON.stringify(payload)
+})
+        .then(() => showThanks())
+        .catch(() => showThanks());
+
+        function showThanks() {
+          form.style.display = 'none';
+          document.getElementById('join-thanks').style.display = 'block';
+        }
+      });
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    function initScrollAnimations() {
+      if (!('IntersectionObserver' in window)) return;
+      const targets = document.querySelectorAll(
+        '.event-card, .build-card, .manifesto-line, .roadmap-step'
+      );
+      targets.forEach(el => {
+        el.style.opacity    = '0';
+        el.style.transform  = 'translateY(18px)';
+        el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      });
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0)';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      targets.forEach(el => obs.observe(el));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initNav();
+      initJoinForm();
+      requestAnimationFrame(() => setTimeout(initScrollAnimations, 60));
+    });
+  </script>
+
+  <!-- Layer 1 Effects -->
+  <script src="assets/js/effects.js"></script>
+</body>
+</html>

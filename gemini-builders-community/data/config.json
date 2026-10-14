@@ -1,0 +1,46 @@
+{
+  "site": {
+    "name": "Gemini Builders Community",
+    "shortName": "GBC",
+    "tagline": "Building the next generation of AI Builders.",
+    "description": "A student-run AI builder community at United Institute of Technology, Prayagraj — under the Google Student Ambassadors program.",
+    "institution": "United Institute of Technology, Prayagraj",
+    "email": "YOUR_EMAIL@example.com"
+  },
+  "stats": {
+    "members": "40+",
+    "sessionsRun": 3,
+    "buildsAhead": "∞",
+    "campuses": "01"
+  },
+  "social": {
+    "discord":   "YOUR_DISCORD_LINK",
+    "linkedin":  "YOUR_LINKEDIN_LINK",
+    "whatsapp":  "YOUR_WHATSAPP_LINK",
+    "googleDev": "YOUR_GOOGLE_DEV_LINK"
+  },
+  "ticker": [
+    "Prompt Engineering",
+    "Gemini API",
+    "AI Research",
+    "Build in Public",
+    "Google Student Ambassadors",
+    "UIT Prayagraj",
+    "Ship It",
+    "Learn Together"
+  ],
+  "manifesto": [
+    "Builders over consumers — we create, not just use",
+    "Learning is a team sport — share what you know",
+    "Ship ugly early — perfect kills momentum",
+    "Real problems only — no toy demos, build for impact",
+    "India needs its own AI story — we're writing it"
+  ],
+  "roadmap": [
+    { "icon": "📖", "title": "Learn",      "desc": "Attend sessions. Read docs. Build your mental model of how AI actually works." },
+    { "icon": "🧪", "title": "Experiment", "desc": "Break things on purpose. Test every assumption. Fail fast in your own sandbox." },
+    { "icon": "🔨", "title": "Build",      "desc": "Ship something real. Ugly is fine. Working beats perfect every single time." },
+    { "icon": "📢", "title": "Share",      "desc": "Post what you built. Teach someone else. Knowledge compounds when it moves." },
+    { "icon": "🚀", "title": "Lead",       "desc": "Run a session. Mentor a new member. Become the person you wished you had." }
+  ]
+}

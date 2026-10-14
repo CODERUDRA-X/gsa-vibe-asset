@@ -1,0 +1,228 @@
+/* ═══════════════════════════════════════════
+   EFFECTS.CSS — GBC Layer 1 Visual Effects
+   ═══════════════════════════════════════════ */
+
+/* ── CUSTOM CURSOR ───────────────────────── */
+*, *::before, *::after { cursor: none !important; }
+
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+  mix-blend-mode: multiply;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.5;
+}
+
+/* Cursor states */
+body.cursor-hover .cursor-dot {
+  width: 16px; height: 16px;
+  background: var(--blue);
+}
+body.cursor-hover .cursor-ring {
+  width: 52px; height: 52px;
+  border-color: var(--blue);
+  opacity: 0.3;
+}
+body.cursor-click .cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--red);
+}
+body.cursor-text .cursor-dot {
+  width: 3px; height: 22px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+body.cursor-text .cursor-ring {
+  opacity: 0;
+}
+
+/* ── INK TRAIL CANVAS ────────────────────── */
+#ink-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99990;
+  opacity: 0.18;
+}
+
+/* ── PAPER NOISE TEXTURE ─────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99997;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+
+/* ── TYPEWRITER ──────────────────────────── */
+.typed-cursor {
+  font-family: var(--font-marker);
+  font-size: inherit;
+  color: var(--red);
+  animation: blink 0.75s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── PARALLAX LINES (hero notebook lines) ── */
+#hero::before {
+  transition: background-position 0.05s linear;
+  will-change: background-position;
+}
+
+/* ── MAGNETIC BUTTON ─────────────────────── */
+.btn-primary,
+.btn-secondary {
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.1s ease;
+}
+
+/* ── SCROLL REVEAL (base state) ─────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── MANIFESTO LINE HOVER ────────────────── */
+.manifesto-line {
+  transition: background 0.18s ease,
+              border-color 0.18s ease,
+              transform 0.18s ease !important;
+}
+.manifesto-line:hover {
+  transform: translateX(6px) !important;
+}
+
+/* ── CARD HOVER LIFT ─────────────────────── */
+.event-card,
+.build-card:not(.placeholder) {
+  transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.18s ease !important;
+}
+.event-card:hover,
+.build-card:not(.placeholder):hover {
+  transform: translate(-4px, -4px) rotate(0deg) !important;
+}
+
+/* ── TICKER PAUSE ON HOVER ───────────────── */
+.ticker-wrap:hover .ticker-inner {
+  animation-play-state: paused;
+}
+
+/* ── NAV LINK UNDERLINE ANIMATE ──────────── */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: width 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ── HERO CTA ENTRANCE ───────────────────── */
+.hero-eyebrow { animation: fadeSlideUp 0.6s ease both; animation-delay: 0.1s; }
+.hero-h1      { animation: fadeSlideUp 0.7s ease both; animation-delay: 0.25s; }
+.hero-sub     { animation: fadeSlideUp 0.7s ease both; animation-delay: 0.4s; }
+.hero-cta-group { animation: fadeSlideUp 0.7s ease both; animation-delay: 0.55s; }
+.hero-doodle-card { animation: fadeSlideUp 0.8s ease both; animation-delay: 0.35s; }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── DOODLE CARD FLOAT ───────────────────── */
+.hero-doodle-card {
+  animation: fadeSlideUp 0.8s ease both 0.35s,
+             float 4s ease-in-out 1s infinite !important;
+}
+@keyframes float {
+  0%, 100% { transform: rotate(1.5deg) translateY(0px); }
+  50%       { transform: rotate(1.5deg) translateY(-8px); }
+}
+
+/* ── SOCIAL PILL HOVER ───────────────────── */
+.social-pill {
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease !important;
+}
+.social-pill:hover {
+  background: var(--yellow) !important;
+}
+
+/* ── JOIN FIELD FOCUS LABEL ──────────────── */
+.join-field {
+  transition: box-shadow 0.18s ease, border-color 0.18s ease !important;
+}
+
+/* ── STAMP BADGE JIGGLE ──────────────────── */
+.event-badge {
+  animation: stampIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes stampIn {
+  from { transform: scale(0) rotate(-8deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);  opacity: 1; }
+}
+
+/* ── ROADMAP STEP PULSE (on hover) ──────── */
+.roadmap-circle {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.roadmap-step:hover .roadmap-circle {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* ── REDUCED MOTION OVERRIDE ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-doodle-card { animation: none !important; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+  *, *::before, *::after { cursor: auto !important; }
+}
+

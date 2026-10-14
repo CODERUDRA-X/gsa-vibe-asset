@@ -1,0 +1,29 @@
+[
+  {
+    "id": "evt-001",
+    "title": "Prompt Engineering Masterclass",
+    "date": "May 2025",
+    "description": "Hands-on deep dive into prompt patterns — zero-shot, few-shot, chain-of-thought. Participants left with a personal prompt library.",
+    "status": "completed",
+    "mode": "✓ Completed · 40+ Attendees",
+    "attendees": 40
+  },
+  {
+    "id": "evt-002",
+    "title": "Gemini API Builders Sprint",
+    "date": "TBA · 2025",
+    "description": "48-hour build sprint using the Gemini API. Teams pitch, build, and demo a working prototype. No theory — only execution.",
+    "status": "upcoming",
+    "mode": "🔨 Hackathon Format",
+    "attendees": null
+  },
+  {
+    "id": "evt-003",
+    "title": "AI for Real Problems",
+    "date": "TBA · 2025",
+    "description": "A workshop focused on applying AI to actual problems in agriculture, healthcare, and local governance — not just tech demos.",
+    "status": "upcoming",
+    "mode": "🌍 Impact Focus",
+    "attendees": null
+  }
+]

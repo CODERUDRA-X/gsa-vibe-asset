@@ -1,0 +1,156 @@
+/* ═══════════════════════════════════════════
+   BASE & RESET — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-elite);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* ── Utility classes ── */
+.mono    { font-family: var(--font-mono); }
+.marker  { font-family: var(--font-marker); }
+
+.sketch-box {
+  border: var(--border-ink);
+  box-shadow: var(--shadow-ink);
+  border-radius: 2px;
+}
+.sketch-box-blue {
+  border: var(--border-blue);
+  box-shadow: var(--shadow-blue);
+  border-radius: 2px;
+}
+.sketch-box-yellow {
+  border: var(--border-ink);
+  box-shadow: var(--shadow-yellow);
+  border-radius: 2px;
+}
+.sketch-box-red {
+  border: var(--border-red);
+  box-shadow: var(--shadow-red);
+  border-radius: 2px;
+}
+
+.stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2.5px solid currentColor;
+  padding: 3px 10px;
+  transform: rotate(-2deg);
+}
+
+/* Section wrapper */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--sp-xl);
+}
+
+/* Section header */
+.section-header {
+  margin-bottom: 56px;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 2px;
+  background: currentColor;
+}
+.section-title {
+  font-family: var(--font-marker);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/* Buttons */
+.btn-primary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--yellow);
+  border: 3px solid var(--ink);
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: var(--shadow-blue);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--blue);
+}
+
+.btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 5px 5px 0 var(--faint);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.btn-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--faint);
+}

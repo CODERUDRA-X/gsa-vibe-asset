@@ -1,0 +1,52 @@
+[
+  {
+    "id": "build-001",
+    "tag": "Prompt Tool",
+    "title": "Project Name Here",
+    "author": "@handle",
+    "role": "Role",
+    "description": "Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.",
+    "link": null,
+    "image": null
+  },
+  {
+    "id": "build-002",
+    "tag": "AI Research",
+    "title": "Project Name Here",
+    "author": "@handle",
+    "role": "Role",
+    "description": "Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.",
+    "link": null,
+    "image": null
+  },
+  {
+    "id": "build-003",
+    "tag": "Automation",
+    "title": "Project Name Here",
+    "author": "@handle",
+    "role": "Role",
+    "description": "Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.",
+    "link": null,
+    "image": null
+  },
+  {
+    "id": "build-004",
+    "tag": "Web App",
+    "title": "Project Name Here",
+    "author": "@handle",
+    "role": "Role",
+    "description": "Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.",
+    "link": null,
+    "image": null
+  },
+  {
+    "id": "build-005",
+    "tag": "Vision AI",
+    "title": "Project Name Here",
+    "author": "@handle",
+    "role": "Role",
+    "description": "Short description of what was built, what problem it solves, and what tech was used. Replace with real project data.",
+    "link": null,
+    "image": null
+  }
+]

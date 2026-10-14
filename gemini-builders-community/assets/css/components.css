@@ -1,0 +1,642 @@
+/* ═══════════════════════════════════════════
+   COMPONENTS CSS — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+/* ── NAV ────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 4px solid var(--yellow);
+  padding: 0 var(--sp-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-logo {
+  font-family: var(--font-marker);
+  font-size: 22px;
+  color: var(--yellow);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  transition: transform var(--t-mid);
+}
+
+/* ── TICKER TAPE ────────────────────────── */
+.ticker-wrap {
+  background: var(--blue);
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 30s linear infinite;
+}
+.ticker-inner span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  padding: 0 32px;
+}
+.ticker-inner span::before {
+  content: '★ ';
+  color: var(--yellow);
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-wrap:hover .ticker-inner {
+  animation-play-state: paused;
+}
+
+/* ── CARDS: EVENTS ──────────────────────── */
+.event-card {
+  background: white;
+  border: 3px solid var(--ink);
+  padding: 28px 24px;
+  position: relative;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.event-card:nth-child(odd)  {
+  box-shadow: 6px 6px 0 var(--blue);
+  transform: rotate(-0.5deg);
+}
+.event-card:nth-child(even) {
+  box-shadow: 6px 6px 0 var(--yellow);
+  transform: rotate(0.5deg);
+}
+.event-card:hover {
+  transform: rotate(0deg) translate(-2px, -2px);
+}
+.event-date-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 16px;
+}
+.event-title {
+  font-family: var(--font-marker);
+  font-size: 22px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.event-desc {
+  font-size: 13px;
+  color: #5a5248;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.event-mode {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+.event-badge {
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--red);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 3px 10px;
+  border: 2px solid var(--ink);
+  text-transform: uppercase;
+}
+.event-badge.completed {
+  background: var(--green);
+}
+
+/* ── CARDS: BUILDS ──────────────────────── */
+.build-card {
+  background: white;
+  border: 3px solid var(--ink);
+  padding: 24px 22px;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.build-card:nth-child(3n+1) { box-shadow: 5px 5px 0 var(--blue); }
+.build-card:nth-child(3n+2) { box-shadow: 5px 5px 0 var(--green); }
+.build-card:nth-child(3n+3) { box-shadow: 5px 5px 0 var(--red); }
+.build-card:hover { transform: translate(-3px, -3px); }
+.build-card.placeholder {
+  border-style: dashed;
+  box-shadow: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+.build-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  display: inline-block;
+  padding: 3px 9px;
+  margin-bottom: 14px;
+}
+.build-title {
+  font-family: var(--font-marker);
+  font-size: 20px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.build-author {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 10px;
+}
+.build-desc {
+  font-size: 13px;
+  color: #5a5248;
+  line-height: 1.65;
+}
+.build-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transition: opacity var(--t-fast);
+}
+.build-link:hover { opacity: 0.7; }
+
+/* ── JOIN FORM ──────────────────────────── */
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.join-field {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: white;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  outline: none;
+  color: var(--ink);
+  transition: box-shadow var(--t-fast);
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.join-field:focus {
+  box-shadow: 6px 6px 0 var(--blue);
+}
+.join-field::placeholder { color: #aaa; }
+.join-submit {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--yellow);
+  border: 3px solid var(--ink);
+  padding: 16px 32px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 var(--red);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  width: 100%;
+}
+.join-submit:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--red);
+}
+.join-thanks {
+  display: none;
+  font-family: var(--font-marker);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  border: 3px solid var(--ink);
+  background: white;
+  box-shadow: var(--shadow-ink);
+}
+
+/* ── FOOTER ─────────────────────────────── */
+.footer {
+  background: var(--ink);
+  border-top: 4px solid var(--yellow);
+  padding: 60px 60px 40px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 32px;
+}
+.footer-brand-name {
+  font-family: var(--font-marker);
+  font-size: 28px;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+.footer-brand-desc {
+  font-size: 13px;
+  color: #7a7268;
+  line-height: 1.8;
+  max-width: 280px;
+}
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(255,229,102,0.3);
+}
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  font-size: 13px;
+  color: #7a7268;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 20px;
+}
+.footer-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #5a5248;
+  letter-spacing: 1px;
+}
+
+/* ── SOCIAL PILLS ───────────────────────── */
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.social-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 3px solid var(--ink);
+  background: white;
+  box-shadow: 3px 3px 0 var(--ink);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+.social-pill:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* ── LOADING SPINNER ────────────────────── */
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.loading-spinner::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--faint);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── ERROR STATE ────────────────────────── */
+.error-state {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--red);
+  border: 3px dashed var(--red);
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING PINNED NOTE & OVERLAY MODAL
+   ═══════════════════════════════════════════ */
+
+/* The Sticky Note */
+.floating-updates-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 900;
+  background: var(--yellow);
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 16px 24px;
+  font-family: var(--font-marker);
+  font-size: 20px;
+  color: var(--ink);
+  transform: rotate(-6deg);
+  cursor: pointer;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  line-height: 1.1;
+}
+.floating-updates-btn:hover {
+  transform: rotate(0deg) scale(1.05) translateY(-5px);
+  box-shadow: 8px 10px 0 var(--blue);
+}
+.floating-updates-btn .pin {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  filter: drop-shadow(2px 4px 0px rgba(0,0,0,0.5));
+}
+
+/* Fullscreen Pop-up Background */
+.updates-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.95);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+.updates-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  overflow-y: auto;
+}
+
+/* Modal Box */
+.updates-modal-content {
+  background: var(--blue);
+  border: 5px solid var(--ink);
+  width: 100%;
+  max-width: 1100px;
+  padding: 60px 40px;
+  position: relative;
+  transform: translateY(50px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: auto;
+  box-shadow: 20px 20px 0 var(--ink);
+}
+.updates-modal-overlay.active .updates-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* 4. Brutalist Close Button (Fixed Position) */
+.close-modal-btn {
+  position: absolute;
+  /* Button ko box ke andar laaye taaki cut na ho */
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  
+  /* Baaki purana design ekdum same */
+  background: var(--red);
+  color: white;
+  border: 4px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transform: rotate(4deg);
+  transition: transform var(--t-fast);
+}
+
+.close-modal-btn:hover { 
+  transform: rotate(0deg) scale(1.1); 
+}
+
+/* Mobile par button ko thoda chota aur adjust kiya */
+@media(max-width: 768px) {
+  .close-modal-btn { 
+    top: 10px; 
+    right: 10px; 
+    font-size: 12px; 
+    padding: 6px 12px;
+  }
+}
+
+/* Folder Grid Styles */
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.update-folder {
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 24px;
+  position: relative;
+}
+.update-folder::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 15px;
+  width: 45px;
+  height: 20px;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-bottom: none;
+}
+.folder-title {
+  font-family: var(--font-marker);
+  font-size: 22px;
+  border-bottom: 3px dashed rgba(0,0,0,0.15);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.folder-links { display: flex; flex-direction: column; gap: 8px; }
+.folder-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  background: white;
+  transition: var(--t-fast);
+}
+.folder-link:hover {
+  background: var(--yellow);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Mobile Fixes */
+@media(max-width: 768px) {
+  .floating-updates-btn { bottom: 20px; right: 20px; padding: 10px 15px; font-size: 16px; }
+  .floating-updates-btn .pin { font-size: 24px; top: -10px; }
+  
+  /* Top margin ko positive 10px kar diya taaki box ke andar rahe */
+  .close-modal-btn { right: 10px; top: 10px; font-size: 12px; padding: 6px 12px; } 
+  
+  .updates-modal-content { padding: 40px 20px; }
+}
+
+/* Ye button ko permission dega ki cloud bahar nikal sake */
+.floating-updates-btn {
+  overflow: visible !important;
+}
+/* Cloud Structure (Hawa mein latkane ke liye) */
+/* Cloud Structure */
+.brutal-cloud {
+  position: absolute;
+  bottom: calc(100% + 15px);
+  right: -10px;
+  width: 160px;
+  background: white;
+  border: 3px solid var(--ink); /*[cite: 1] */
+  box-shadow: 4px 4px 0 var(--blue); /*[cite: 1] */
+  padding: 10px 14px; /*[cite: 1] */
+  font-family: var(--font-mono); /*[cite: 1] */
+  font-size: 11px; /*[cite: 1] */
+  font-weight: 700; /*[cite: 1] */
+  color: var(--ink); /*[cite: 1] */
+  text-transform: none; /*[cite: 1] */
+  line-height: 1.4; /*[cite: 1] */
+  text-align: center; /*[cite: 1] */
+  z-index: 1000; /*[cite: 1] */
+  pointer-events: none; /*[cite: 1] */
+  transform-origin: bottom right; /*[cite: 1] */
+  
+  /* Added base opacity */
+  opacity: 0; 
+  /* Speed fast kar di (5s) */
+  animation: autoPopCloud 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite; 
+}
+
+/* Cloud ka Arrow (Neeche ki taraf) */
+.brutal-cloud::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 30px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-right: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+/* Keyframes for Auto-Pop Effect */
+@keyframes autoPopCloud {
+  0%, 10%   { opacity: 0; transform: translateY(15px) scale(0.8) rotate(5deg); }
+  15%, 45%  { opacity: 1; transform: translateY(0) scale(1) rotate(-2deg); }
+  50%, 100% { opacity: 0; transform: translateY(-10px) scale(0.9) rotate(0deg); }
+}
+
+/* Hover Override: Agar user hover kare toh cloud hamesha dikhega */
+.floating-updates-btn:hover .brutal-cloud {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(-2deg);
+  animation: none; 
+}

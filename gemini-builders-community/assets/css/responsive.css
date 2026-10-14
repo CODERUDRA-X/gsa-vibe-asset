@@ -1,0 +1,94 @@
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Gemini Builders Community
+   ═══════════════════════════════════════════ */
+
+/* ── TABLET (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left  { padding: 100px 48px 40px 80px; }
+  .hero-right { padding: 20px 48px 60px; }
+
+  #about .section-inner,
+  #join  .section-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .events-grid  { grid-template-columns: 1fr 1fr; }
+  .builds-grid  { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── MOBILE (≤ 768px) ── */
+@media (max-width: 768px) {
+  :root {
+    --sp-xl:  24px;
+    --sp-2xl: 64px;
+  }
+
+  /* Nav */
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; gap: 0; }
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    border-bottom: 3px solid var(--yellow);
+    z-index: 99;
+  }
+  .nav-links.open a {
+    display: block;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  #hero::after { left: 32px; }
+  .hero-left  { padding: 80px 24px 40px 52px; }
+  .hero-right { padding: 10px 24px 56px; }
+  .hero-doodle-card { transform: none; }
+
+  /* Grids → single column */
+  .events-grid  { grid-template-columns: 1fr; }
+  .builds-grid  { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Roadmap → vertical */
+  .roadmap-track {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .roadmap-track::before { display: none; }
+  .roadmap-step { flex-direction: row; text-align: left; gap: 20px; }
+  .roadmap-circle { flex-shrink: 0; margin-bottom: 0; }
+
+  /* Footer */
+  .footer { padding: 48px 24px 32px; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Events — un-rotate on mobile */
+  .event-card:nth-child(odd),
+  .event-card:nth-child(even) {
+    transform: none;
+  }
+}
+
+/* ── SMALL MOBILE (≤ 420px) ── */
+@media (max-width: 420px) {
+  .hero-h1 { font-size: 44px; }
+  .hero-cta-group { flex-direction: column; }
+  .btn-primary, .btn-secondary { text-align: center; }
+  .doodle-stat-num { font-size: 28px; }
+  .social-links { flex-direction: column; }
+}

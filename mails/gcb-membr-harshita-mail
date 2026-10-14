@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Architecture Blueprint Handover - Gemini Builders Community</title>
+</head>
+<body style="margin:0;padding:0;background-color:#ffffff;font-family:Arial,Helvetica,sans-serif;">
+
+<!-- Outer wrapper (Seamless White) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#ffffff;">
+<tr><td align="center" style="padding:20px 10px;">
+
+<!-- Main container (No Shadows, Blends with background) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;background-color:#ffffff;">
+
+  <!-- ══════════════════════════════ -->
+  <!-- HEADER BANNER                  -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:0;">
+      <!-- GCB Banner -->
+      <img src="https://github.com/CODERUDRA-X/gsa-vibe-asset/blob/main/file_00000000fb1c720b9405ab5657660b7b.png?raw=true"
+           alt="Gemini Builders Community"
+           width="600"
+           style="display:block;width:100%;height:auto;border-radius:12px;margin:0 auto;"
+      />
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- HEADLINE BLOCK                 -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td align="center" style="padding:40px 40px 16px 40px;">
+      <!-- Google-dot accent row -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="12" height="12" style="background-color:#4285F4;border-radius:50%;display:inline-block;"></td>
+          <td width="6"></td>
+          <td width="12" height="12" style="background-color:#EA4335;border-radius:50%;display:inline-block;"></td>
+          <td width="6"></td>
+          <td width="12" height="12" style="background-color:#FBBC05;border-radius:50%;display:inline-block;"></td>
+          <td width="6"></td>
+          <td width="12" height="12" style="background-color:#34A853;border-radius:50%;display:inline-block;"></td>
+        </tr>
+      </table>
+      <div style="height:20px;"></div>
+      <h1 style="margin:0;font-size:24px;font-weight:700;color:#1a1a2e;line-height:1.4;letter-spacing:-0.5px;">
+        Technical Research & Architecture Blueprint
+      </h1>
+      <div style="height:10px;"></div>
+      <p style="margin:0;font-size:14px;font-weight:600;color:#4285F4;letter-spacing:1px;text-transform:uppercase;">
+        AI-Based Disease Recognition System
+      </p>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- INTRO SECTION                  -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:20px 40px 10px 40px;">
+      <p style="margin:0 0 16px 0;font-size:16px;font-weight:700;color:#202124;letter-spacing:-0.2px;">
+        Hi <span style="
+background:linear-gradient(90deg,#4285F4,#EA4335,#FBBC05,#34A853);
+background-clip:text;
+-webkit-background-clip:text;
+color:transparent;
+-webkit-text-fill-color:transparent;
+">
+Harshita
+</span>,
+      </p>
+      <p style="margin:0 0 16px 0;font-size:15px;color:#5f6368;line-height:1.8;">
+        Following up on our discussion regarding the development of the AI diagnostic application, I wanted to ensure you have a highly structured roadmap before you start writing the code.
+      </p>
+      <p style="margin:0;font-size:15px;color:#5f6368;line-height:1.8;">
+        I have authored and attached the <strong style="color:#3c4043;">Technical Research & Architecture Blueprint</strong> for the system. Instead of figuring out the pipeline from scratch, this document provides a production-grade Standard Operating Procedure (SOP) to build, train, and deploy the system efficiently.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- WHAT'S INSIDE (UNBOXED)        -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:24px 40px 10px 40px;">
+      <h2 style="margin:0 0 14px 0;font-size:18px;font-weight:700;color:#1a1a2e;border-bottom:2px solid #e8eaed;padding-bottom:10px;">
+        What is inside this Blueprint?
+      </h2>
+      <p style="margin:0 0 16px 0;font-size:15px;color:#5f6368;line-height:1.7;">
+        This is not just a theoretical guide; it is an execution manual. Complex ML concepts are broken down into actionable engineering steps:
+      </p>
+      
+      <!-- Custom Clean Bullets -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td width="20" valign="top" style="padding-top:4px;color:#4285F4;font-size:16px;">✦</td>
+          <td style="padding-bottom:14px;font-size:14px;color:#5f6368;line-height:1.7;">
+            <strong style="color:#202124;">The MVP Strategy:</strong> A clear comparative analysis on why we are choosing <b>AgriTech (Plant Leaf Detection)</b> over HealthTech for the V1 launch.
+          </td>
+        </tr>
+        <tr>
+          <td width="20" valign="top" style="padding-top:4px;color:#4285F4;font-size:16px;">✦</td>
+          <td style="padding-bottom:14px;font-size:14px;color:#5f6368;line-height:1.7;">
+            <strong style="color:#202124;">Data Acquisition:</strong> Curated open-source dataset recommendations including <i>PlantVillage (54k+ images)</i> and specialized localized sets.
+          </td>
+        </tr>
+        <tr>
+          <td width="20" valign="top" style="padding-top:4px;color:#4285F4;font-size:16px;">✦</td>
+          <td style="padding-bottom:14px;font-size:14px;color:#5f6368;line-height:1.7;">
+            <strong style="color:#202124;">The Engine Room:</strong> Architectural reasoning for choosing <b>MobileNetV2</b> with Depthwise Separable Convolutions for zero-latency mobile deployment.
+          </td>
+        </tr>
+        <tr>
+          <td width="20" valign="top" style="padding-top:4px;color:#4285F4;font-size:16px;">✦</td>
+          <td style="padding-bottom:14px;font-size:14px;color:#5f6368;line-height:1.7;">
+            <strong style="color:#202124;">The Ecosystem:</strong> Connecting the AI model to a <b>FastAPI</b> backend and dynamically generating actionable health reports via the <b>Google Gemini API</b>.
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- NEXT STEPS (TIMELINE STYLE)    -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:10px 40px 24px 40px;">
+      <h2 style="margin:0 0 16px 0;font-size:18px;font-weight:700;color:#1a1a2e;">
+        🎯 Your Immediate Next Steps
+      </h2>
+      <p style="margin:0 0 20px 0;font-size:15px;color:#5f6368;line-height:1.7;">
+        To keep the momentum going, here is how I want you to utilize this document over the next few days:
+      </p>
+      
+      <!-- Sleek Numbered List -->
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <!-- Step 1 -->
+        <tr>
+          <td width="36" valign="top" style="padding-bottom:16px;">
+            <div style="background:#e8f0fe;color:#1a73e8;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:bold;">1</div>
+          </td>
+          <td style="padding-bottom:16px;">
+            <div style="font-size:15px;font-weight:700;color:#202124;margin-bottom:2px;">Read the Executive Summary & Architecture</div>
+            <div style="font-size:14px;color:#5f6368;line-height:1.5;">Focus on understanding the <i>"Why"</i> behind MobileNetV2 and FastAPI before the <i>"How"</i>.</div>
+          </td>
+        </tr>
+        <!-- Step 2 -->
+        <tr>
+          <td width="36" valign="top" style="padding-bottom:16px;">
+            <div style="background:#e8f0fe;color:#1a73e8;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:bold;">2</div>
+          </td>
+          <td style="padding-bottom:16px;">
+            <div style="font-size:15px;font-weight:700;color:#202124;margin-bottom:2px;">Procure the Fuel</div>
+            <div style="font-size:14px;color:#5f6368;line-height:1.5;">Navigate to Kaggle and download the PlantVillage dataset to your local machine.</div>
+          </td>
+        </tr>
+        <!-- Step 3 -->
+        <tr>
+          <td width="36" valign="top" style="padding-bottom:16px;">
+            <div style="background:#e8f0fe;color:#1a73e8;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:bold;">3</div>
+          </td>
+          <td style="padding-bottom:16px;">
+            <div style="font-size:15px;font-weight:700;color:#202124;margin-bottom:2px;">Set up the Environment</div>
+            <div style="font-size:14px;color:#5f6368;line-height:1.5;">Initialize your Python virtual environment and start scripting the Data Preprocessing pipeline (Resizing & Normalization).</div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- OUTRO SECTION                  -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:0 40px 32px 40px;">
+      <p style="margin:0 0 16px 0;font-size:15px;color:#5f6368;line-height:1.8;">
+        I have also included links to the <strong style="color:#3c4043;">Gemini API SDK documentation</strong> and the required <strong style="color:#3c4043;">Kaggle datasets</strong> in the references section of the PDF for your quick access.
+      </p>
+      <p style="margin:0 0 20px 0;font-size:15px;color:#5f6368;line-height:1.8;">
+        Review the blueprint carefully. Once you have your data preprocessed and your environment ready, we will connect to discuss the training pipeline.
+      </p>
+      <p style="margin:0;font-size:15px;font-weight:700;color:#1a1a2e;">
+        Build well.
+      </p>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- GREEN COMMUNITY CARD (REALISTIC MESH TEXTURE) -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:0 32px 40px 32px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"
+             style="background-color: #167a3d; background-image: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.08) 0%, transparent 35%), radial-gradient(circle at 85% 85%, rgba(0, 0, 0, 0.15) 0%, transparent 40%), radial-gradient(circle at 50% 30%, rgba(85, 204, 115, 0.15) 0%, transparent 50%), linear-gradient(135deg, #2e8b47 0%, #116834 100%); border-radius:16px; box-shadow: inset 0 2px 10px rgba(255,255,255,0.1), inset 0 -4px 15px rgba(0,0,0,0.1);">
+        <tr>
+          <td align="center" style="padding:36px 32px;">
+<a href="https://gcb-hub.netlify.app"
+   target="_blank"
+   style="text-decoration:none;display:inline-block;">
+            <div style="font-size:28px;margin-bottom:4px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">🌱</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;text-shadow: 0 1px 2px rgba(0,0,0,0.2);">The Execution Phase</div>
+            <h2 style="margin:0 0 12px 0;font-size:20px;font-weight:700;color:#ffffff;line-height:1.3;text-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+              Let's Turn This Blueprint Into Reality
+            </h2>
+            <p style="margin:0 0 24px 0;font-size:14px;color:rgba(255,255,255,0.9);line-height:1.8;max-width:420px;text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+              An architecture document is just the seed. The Gemini Builders Community is where we collaborate, engineer robust pipelines, and grow these ideas into real-world AI systems. Let's build this together.
+            </p>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding:0 6px;">
+                  <div style="background:rgba(255,255,255,0.15);border-radius:20px;padding:8px 16px;font-size:11px;font-weight:700;color:#fff;letter-spacing:0.5px;box-shadow: 0 2px 4px rgba(0,0,0,0.05);backdrop-filter: blur(4px);">ARCHITECT</div>
+                </td>
+                <td style="padding:0 6px;">
+                  <div style="background:rgba(255,255,255,0.15);border-radius:20px;padding:8px 16px;font-size:11px;font-weight:700;color:#fff;letter-spacing:0.5px;box-shadow: 0 2px 4px rgba(0,0,0,0.05);backdrop-filter: blur(4px);">ENGINEER</div>
+                </td>
+                <td style="padding:0 6px;">
+                  <div style="background:rgba(255,255,255,0.15);border-radius:20px;padding:8px 16px;font-size:11px;font-weight:700;color:#fff;letter-spacing:0.5px;box-shadow: 0 2px 4px rgba(0,0,0,0.05);backdrop-filter: blur(4px);">SCALE</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- SIGNATURE (CLEAN TEXT)         -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="padding:0 40px 30px 40px;">
+      <div style="border-top:1px solid #e8eaed;padding-top:24px;">
+        <p style="margin:0 0 2px 0;font-size:16px;font-weight:700;color:#1a1a2e;">Shreyansh Srivastava</p>
+        <p style="margin:0 0 10px 0;font-size:14px;font-weight:800;letter-spacing:1px;background:linear-gradient(135deg, #116834 0%, #34A853 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:#167a3d;">CODERUDRA-X</p>
+        
+        <!-- Social Icons Row (.png format) -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+          <tr>
+            <td style="padding-right:12px;">
+              <a href="https://github.com/CODERUDRA-X" target="_blank" style="text-decoration:none;">
+                <img src="https://img.icons8.com/ios-glyphs/30/555555/github.png" alt="GitHub" width="22" height="22" style="display:block;">
+              </a>
+            </td>
+            <td style="padding-right:12px;">
+              <a href="https://www.linkedin.com/in/shreyansh-srivastava-9a83b9291/" target="_blank" style="text-decoration:none;">
+                <img src="https://img.icons8.com/ios-glyphs/30/555555/linkedin.png" alt="LinkedIn" width="22" height="22" style="display:block;">
+              </a>
+            </td>
+            <td>
+              <a href="https://x.com/coderudrax" target="_blank" style="text-decoration:none;">
+                <img src="https://img.icons8.com/ios-glyphs/30/555555/twitterx.png" alt="X" width="22" height="22" style="display:block;">
+              </a>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Tagline -->
+        <p style="margin:0 0 8px 0;font-size:13px;color:#5f6368;font-style:italic;">
+          "We don't just learn AI. We build it."
+        </p>
+        
+        <!-- Clean Text Community Role -->
+       <!-- Clean Text Roles -->
+        <p style="margin:0 0 2px 0;font-size:13px;font-weight:600;color:#202124;">
+          Founder @ Gemini Builders Community
+        </p>
+        <p style="margin:0;font-size:13px;font-weight:400;color:#5f6368;">
+          SDE-AIML • AI Researcher
+        </p>
+      </div>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════ -->
+  <!-- FOOTER (SEAMLESS INTEGRATION)  -->
+  <!-- ══════════════════════════════ -->
+  <tr>
+    <td style="background-color:#ffffff;padding:10px 40px 30px 40px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td align="center" style="border-top:1px solid #e8eaed;padding-top:20px;">
+            <!-- Footer community links -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
+              <tr>
+                <td style="padding:0 12px;">
+                  <a href="https://www.linkedin.com/company/gsauit/" style="font-size:12px;color:#4285F4;text-decoration:none;font-weight:600;">LinkedIn</a>
+                </td>
+                <td style="color:#dadce0;font-size:12px;">|</td>
+                <td style="padding:0 12px;">
+                  <a href="https://discord.gg/sw9ATkbZj" style="font-size:12px;color:#4285F4;text-decoration:none;font-weight:600;">Discord</a>
+                </td>
+                <td style="color:#dadce0;font-size:12px;">|</td>
+                <td style="padding:0 12px;">
+                  <a href="https://chat.whatsapp.com/Eaut7cUSYPwH7ww3SlZul1" style="font-size:12px;color:#4285F4;text-decoration:none;font-weight:600;">WhatsApp</a>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:0 0 6px 0;font-size:12px;font-weight:700;color:#3c4043;">Gemini Builders Community</p>
+            <p style="margin:0 0 12px 0;font-size:11px;color:#80868b;font-style:italic;">Building the next generation of AI Builders.</p>
+            <p style="margin:0;font-size:11px;color:#9aa0a6;">
+              &copy; 2026 Gemini Builders Community &nbsp;·&nbsp; Powered by Google Student Ambassadors
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+<!-- /Main container -->
+
+</td></tr>
+</table>
+<!-- /Outer wrapper -->
+
+</body>
+</html>
